@@ -1,0 +1,114 @@
+{
+    "Groups": [
+        {
+            "ID": "14338",
+            "OrganizationID": "748448",
+            "Name": "Cartera",
+            "Description": null,
+            "ImportID": null,
+            "DateCreated": "05/06/2014 14:22",
+            "DateModified": "05/06/2014 14:22",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14337",
+            "OrganizationID": "748448",
+            "Name": "Contabilidad",
+            "Description": null,
+            "ImportID": null,
+            "DateCreated": "05/06/2014 14:22",
+            "DateModified": "05/06/2014 14:22",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14329",
+            "OrganizationID": "748448",
+            "Name": "Development",
+            "Description": null,
+            "ImportID": null,
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "05/06/2014 12:26",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14330",
+            "OrganizationID": "748448",
+            "Name": "General Discussion",
+            "Description": null,
+            "ImportID": null,
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "05/06/2014 12:26",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14335",
+            "OrganizationID": "748448",
+            "Name": "Gestión Comercial",
+            "Description": null,
+            "ImportID": null,
+            "DateCreated": "05/06/2014 14:21",
+            "DateModified": "05/06/2014 14:21",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14336",
+            "OrganizationID": "748448",
+            "Name": "Gestión de uva",
+            "Description": null,
+            "ImportID": null,
+            "DateCreated": "05/06/2014 14:22",
+            "DateModified": "05/06/2014 14:22",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14331",
+            "OrganizationID": "748448",
+            "Name": "Marketing",
+            "Description": null,
+            "ImportID": null,
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "05/06/2014 12:26",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14332",
+            "OrganizationID": "748448",
+            "Name": "Quality Assurance",
+            "Description": null,
+            "ImportID": null,
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "05/06/2014 12:26",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14333",
+            "OrganizationID": "748448",
+            "Name": "Sales",
+            "Description": null,
+            "ImportID": null,
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "05/06/2014 12:26",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14334",
+            "OrganizationID": "748448",
+            "Name": "Support",
+            "Description": "Default Support Group",
+            "ImportID": null,
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "05/06/2014 12:26",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+DELIMITER ;;
+CREATE TRIGGER `mi_tabla_before_insert`
+BEFORE INSERT ON `mi_tabla`
+FOR EACH ROW
+BEGIN
+  IF NEW.id IS NULL THEN
+    SET NEW.id = UUID();
+  END IF;
+END;
+;;
+DELIMITER ;

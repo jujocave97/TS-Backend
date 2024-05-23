@@ -1,0 +1,69 @@
+{
+    "TicketTypes": [
+        {
+            "ID": "22693",
+            "Name": "Support",
+            "Description": "Support",
+            "Position": "0",
+            "OrganizationID": "748448",
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "10/06/2014 12:49",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741",
+            "IconUrl": "Images/TicketTypes/Phone.gif",
+            "ProductLineID": null
+        },
+        {
+            "ID": "22694",
+            "Name": "Defects",
+            "Description": "Defects",
+            "Position": "1",
+            "OrganizationID": "748448",
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "10/06/2014 12:49",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741",
+            "IconUrl": "Images/TicketTypes/Bugs.png",
+            "ProductLineID": null
+        },
+        {
+            "ID": "22695",
+            "Name": "Features",
+            "Description": "Features",
+            "Position": "2",
+            "OrganizationID": "748448",
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "10/06/2014 12:49",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741",
+            "IconUrl": "Images/TicketTypes/Features.png",
+            "ProductLineID": null
+        },
+        {
+            "ID": "22696",
+            "Name": "Task",
+            "Description": "Task",
+            "Position": "3",
+            "OrganizationID": "748448",
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "10/06/2014 12:49",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741",
+            "IconUrl": "images/tickettypes/tasks.png",
+            "ProductLineID": null
+        },
+        {
+            "ID": "22787",
+            "Name": "Tarea",
+            "Description": "Prueba Jira",
+            "Position": "4",
+            "OrganizationID": "748448",
+            "DateCreated": "10/06/2014 12:49",
+            "DateModified": "10/06/2014 12:49",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741",
+            "IconUrl": "images/tickettypes/antenna.gif",
+            "ProductLineID": null
+        }
+    ]
+}

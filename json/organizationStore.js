@@ -1,0 +1,67 @@
+const https = require('https');
+const fs = require('fs');
+const yargs = require('yargs');
+
+
+
+const argv = yargs
+    .option('endpoint', {
+        alias: 'e',
+        describe: 'ruta',
+        demandOption: true, // Hace que el argumento sea obligatorio
+        type: 'string' // Tipo de dato esperado
+    })
+    .option('directory', {
+        alias: 'd',
+        describe: 'directorio',
+        demandOption: true,
+        type: 'string' // Tipo de dato esperado
+    })
+    .argv;
+
+const endpoint = argv.endpoint;
+const directory = argv.directory;
+
+const organizationID = '748448';
+const apiToken = '55e32b85-8a30-4533-84a0-9f5b1b81f45f';
+const credentials = `${organizationID}:${apiToken}`;
+const encodedCredentials = Buffer.from(credentials).toString('base64');
+
+
+const options = {
+  hostname: 'app.teamsupport.com',
+  path: `/api/json/${endpoint}`,
+  method: 'GET',
+  headers: {
+    'Authorization': `Basic ${encodedCredentials}`,
+    'Content-Type': 'application/json',
+    'User-Agent': 'Iditic',
+  },
+};
+
+
+const req = https.request(options, (res) => {
+  let data = '';
+  res.on('data', (chunk) => {
+    data += chunk; 
+  });
+  res.on('end', () => {
+    try {
+      const parsedData = data;
+      fs.writeFile(`./json/${directory}.json`, parsedData, (err) => {
+        if (err) throw err;
+        console.log("Nuevos datos agregados");
+      });
+      console.log('Parsed Response:', parsedData);
+      // Now you can access the data as a JavaScript object
+    } catch (error) {
+      console.error('Error parsing JSON:', error);
+    }
+  });
+});
+
+req.on('error', (error) => {
+  console.error('Error:', error);
+});
+
+req.end();

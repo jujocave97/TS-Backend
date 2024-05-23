@@ -1,0 +1,49 @@
+{
+    "Products": [
+        {
+            "ID": "14660",
+            "Name": "Contabilidad",
+            "Description": null,
+            "DateCreated": "05/06/2014 12:46",
+            "DateModified": "05/06/2014 12:46",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14661",
+            "Name": "Gest. de UVA",
+            "Description": null,
+            "DateCreated": "05/06/2014 14:28",
+            "DateModified": "05/06/2014 14:28",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14659",
+            "Name": "Gestión Comercial",
+            "Description": null,
+            "DateCreated": "05/06/2014 12:46",
+            "DateModified": "05/06/2014 12:46",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14657",
+            "Name": "Product A",
+            "Description": null,
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "05/06/2014 12:26",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        },
+        {
+            "ID": "14658",
+            "Name": "Product B",
+            "Description": null,
+            "DateCreated": "05/06/2014 12:26",
+            "DateModified": "05/06/2014 12:26",
+            "CreatorID": "1532741",
+            "ModifierID": "1532741"
+        }
+    ]
+}
