@@ -32,6 +32,6 @@ function insertContacts(){
     processContacts(contacts);
 }
 
-module.exports = {insertContact}
+module.exports = {insertContacts}
 
 // funciona insertado 

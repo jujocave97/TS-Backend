@@ -48,7 +48,7 @@ async function insertActions(directorio) {
     }
 }
 
-insertActions(directorio);
+//insertActions(directorio);
 // Llamar a la función principal
 
 module.exports = {insertActions}
