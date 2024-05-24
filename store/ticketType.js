@@ -12,8 +12,8 @@ function objectList(){
     return ticketTypes;
 }
 
-function processTicketTypes(ticketTypes){
-    ticketTypes.forEach(ticket => {
+async function processTicketTypes(ticketTypes){
+    ticketTypes.forEach(async ticket => {
         const creator = userList[ticket.CreatorID];
         ticket.CreatorID = creator;
     
@@ -22,13 +22,13 @@ function processTicketTypes(ticketTypes){
     
         ticket.DateModified = swapEngCalendar( ticket.DateModified);
         ticket.DateCreated = swapEngCalendar( ticket.DateCreated);
-        insertTicketType( ticket);
+        await insertTicketType( ticket);
     });
 }
 
-function insertTicketTypes(){
+async function insertTicketTypes(){
     const ticketTypes = objectList();
-    processTicketTypes(ticketTypes)
+    await processTicketTypes(ticketTypes)
 }
 
 insertTicketTypes()

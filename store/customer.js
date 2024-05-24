@@ -11,18 +11,18 @@ function objectList(){
 }
 
 // no hace falta referenciar ninguna tabla, el campo ajeno es la organizacion y siempre es el mismo valor
-function processCustomers( customers ){
-    customers.forEach(customer => {
+async function processCustomers( customers ){
+    customers.forEach(async customer => {
         customer.DateModified = swapEngCalendar( customer.DateModified);
         customer.DateCreated = swapEngCalendar( customer.DateCreated);
-        insertCustomer( customer);
+        await insertCustomer( customer);
     });
 }
 // funciona insertado
 
-function insertCustomers (){
+async function insertCustomers (){
     const customers = objectList();
-    processCustomers(customers);
+    await processCustomers(customers);
 }
 
 insertCustomers()  // los inserta y crea el JSON

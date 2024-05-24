@@ -16,8 +16,8 @@ function objectList(){
 //console.log(customerList)
 
 // siempre va a tener el mismo valor de organizacion
-function processContacts( contacts ){
-    contacts.forEach(contact => {
+async function processContacts( contacts ){
+    contacts.forEach(async contact => {
         if(contact.OrganizationID in customerList){
             contact.CustomerID = customerList[contact.OrganizationID]
         }
@@ -27,13 +27,13 @@ function processContacts( contacts ){
         contact.DateCreated = swapEngCalendar( contact.DateCreated);
         contact.LastLogin = swapEngCalendar( contact.LastLogin);
         contact.LastActivity = swapEngCalendar( contact.LastActivity);
-        insertContact( contact);
+        await insertContact( contact);
     });
 }
 
-function insertContacts(){
+async function insertContacts(){
     const contacts = objectList();
-    processContacts(contacts);
+    await processContacts(contacts);
 }
 
 insertContacts()

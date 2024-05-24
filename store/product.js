@@ -11,18 +11,18 @@ function objectList(){
 }
 
 
-function processProducts(products){
-    products.forEach(product => {
+async function processProducts(products){
+    products.forEach(async product => {
         product.DateModified = swapEngCalendar( product.DateModified);
         product.DateCreated = swapEngCalendar( product.DateCreated);
         product.OrganizationID = 748448
-        insertProduct( product);
+        await insertProduct( product);
     });
 }
  
-function insertProducts() {
+async function insertProducts() {
     const products = objectList();
-    processProducts(products);
+    await processProducts(products);
 }
 
 insertProducts()

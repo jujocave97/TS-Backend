@@ -32,11 +32,11 @@ async function insertActions() {
 
 
             // Modificar los IDs de los tickets
-            actions.forEach(action =>{
+            actions.forEach(async action =>{
                 //console.log(action);
                 const ticketID = ticketList[action.TicketID];
                 action.TicketID = ticketID;
-                insertAction(action);
+                await insertAction(action);
         
             });
 

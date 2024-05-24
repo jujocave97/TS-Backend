@@ -11,14 +11,14 @@ function objectList(){
 }
 
 // siempre tiene el mismo valor de organizacion y es la unica clave ajena de la tabla a la que se insertan los grupos
-function processGroups(groups){
-    groups.forEach(element => {
-        insertGroup(element);
+async function processGroups(groups){
+    groups.forEach(async element => {
+        await insertGroup(element);
     });
 }
-function insertGroups (){
+async function insertGroups (){
     const list = objectList();
-    processGroups(list);
+    await processGroups(list);
 }
 
 

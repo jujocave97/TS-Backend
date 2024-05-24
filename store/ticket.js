@@ -17,8 +17,8 @@ function objectList(){
     return tickets;
 }
 
-function processTickets(tickets){
-    tickets.forEach(ticket => {
+async function processTickets(tickets){
+    tickets.forEach(async ticket => {
 
         if(ticket.ProductID in productList){
             const product = productList[ticket.ProductID];
@@ -64,13 +64,13 @@ function processTickets(tickets){
         ticket.DateCreated = swapEngCalendar( ticket.DateCreated);
         ticket.DateClosed = swapEngCalendar( ticket.DateClosed);
         ticket.DueDate = swapEngCalendar( ticket.DueDate);
-        insertTicket( ticket);
+        await insertTicket( ticket);
     });
 }
 
-function insertTickets () {
+async function insertTickets () {
     const tickets = objectList();
-    processTickets(tickets);
+    await processTickets(tickets);
 }
 
 insertTickets() 

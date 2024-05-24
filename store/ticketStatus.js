@@ -13,9 +13,9 @@ function objectList(){
     return ticketSeverities;
 }
 
-function processTicketStatus(ticketStatus){
+async function processTicketStatus(ticketStatus){
     
-    ticketStatus.forEach(ticket => {
+    ticketStatus.forEach(async ticket => {
         const creator = userList[ticket.CreatorID];
         ticket.CreatorID = creator;
 
@@ -27,13 +27,13 @@ function processTicketStatus(ticketStatus){
 
         ticket.DateModified = swapEngCalendar( ticket.DateModified);
         ticket.DateCreated = swapEngCalendar( ticket.DateCreated);
-        insertTicketStatus( ticket);
+        await insertTicketStatus( ticket);
     });
 }
 
-function insertTicketStatuses(){
+async function insertTicketStatuses(){
     const ticketStatus = objectList();
-    processTicketStatus(ticketStatus)
+    await processTicketStatus(ticketStatus)
 }
 
 insertTicketStatuses()

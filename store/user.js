@@ -12,8 +12,8 @@ function objectList(){
     return groups;
 }
 
-function processUsers(users){
-    users.forEach(user => {
+async function processUsers(users){
+    users.forEach(async user => {
         if(user.GroupID in groupList){
             const group = groupList[user.GroupID];
             user.GroupID = group;
@@ -23,13 +23,13 @@ function processUsers(users){
         user.LastPing = swapEngCalendar(user.LastPing);
         user.DateModified = swapEngCalendar( user.DateModified);
         user.DateCreated = swapEngCalendar( user.DateCreated);
-        insertUser(user);
+        await insertUser(user);
     });
 }
 
-function insertUsers(){
+async function insertUsers(){
     const users = objectList();
-    processUsers(users);
+    await processUsers(users);
 }
 
 insertUsers()
