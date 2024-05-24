@@ -25,6 +25,7 @@ function insertProductVersions () {
     processProducts(productV);
 }
 
+insertProductVersions()
 module.exports = {insertProductVersions}
 // solo se referencia a la organizacion y solo hay una organizacion en el sistema
-// funciona insertado
+// funciona insertado y crea el json

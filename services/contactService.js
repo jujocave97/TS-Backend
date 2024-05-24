@@ -6,6 +6,9 @@ Contact.init(contactSchema, Contact.config(seq));
 
 async function insertContact(dataContact) {
     try {
+      dataContact.CustomerID = dataContact.OrganizationID
+      console.log(dataContact.Custo)
+      
       const newContact = await Contact.create(dataContact);
       addTOJson(dataContact.ID, newContact.id, './keys/Contacts.json');
       console.log('Nuevo ID del contacto:', newContact.id);
@@ -13,5 +16,6 @@ async function insertContact(dataContact) {
       console.error('Error al insertar el contacto:', error);
     }
 }
+
 
 module.exports = insertContact;

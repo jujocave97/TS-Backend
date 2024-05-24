@@ -31,6 +31,8 @@ function insertTicketSeverities() {
     processTicketSeverities(ticketSeverities)
 }
 
+insertTicketSeverities()
+
 module.exports = {insertTicketSeverities}
 
-// funciona  INSERTADO
+// funciona  INSERTADO y crea json

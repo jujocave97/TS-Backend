@@ -22,7 +22,7 @@ const UserSchema = {
     },
     LastName: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     title: {
         type: DataTypes.STRING,
@@ -33,18 +33,12 @@ const UserSchema = {
     },
     LastLoggin: {
         type: DataTypes.DATE,
-        get() {
-            const value = this.getDataValue('LastLoggin');
-            return moment(value).format('DD/MM/YYYY HH:mm');
-        },
+        allowNull: true,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     LastActivity: {
         type: DataTypes.DATE,
-        get() {
-            const value = this.getDataValue('LastActivity');
-            return moment(value).format('DD/MM/YYYY HH:mm');
-        },
+        allowNull: true,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     LastPing: {
@@ -77,26 +71,17 @@ const UserSchema = {
     },
     DeactivatedOn : {
         type: DataTypes.DATE,
-        get() {
-            const value = this.getDataValue('LastActivity');
-            return moment(value).format('DD/MM/YYYY HH:mm');
-        },
+        allowNull: true,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     DateCreated : {
         type: DataTypes.DATE,
-        get() {
-            const value = this.getDataValue('LastActivity');
-            return moment(value).format('DD/MM/YYYY HH:mm');
-        },
+        allowNull: false,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     DateModified : {
         type: DataTypes.DATE,
-        get() {
-            const value = this.getDataValue('LastActivity');
-            return moment(value).format('DD/MM/YYYY HH:mm');
-        },
+        allowNull: false,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     IsOnline : {

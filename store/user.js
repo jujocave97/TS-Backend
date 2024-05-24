@@ -1,6 +1,7 @@
 const insertUser = require('./../services/userService');
 const path = require('path');
-
+const {swapEngCalendar} = require('./../formats/changeDate');
+const {createList} = require('./../formats/createListOfJSON');
 const groupList = createList('Groups');
 const fs = require ('fs');
 
@@ -17,7 +18,9 @@ function processUsers(users){
             const group = groupList[user.GroupID];
             user.GroupID = group;
         }
-    
+        user.LastLogin = swapEngCalendar(user.LastLogin);
+        user.LastActivity = swapEngCalendar(user.LastActivity);
+        user.LastPing = swapEngCalendar(user.LastPing);
         user.DateModified = swapEngCalendar( user.DateModified);
         user.DateCreated = swapEngCalendar( user.DateCreated);
         insertUser(user);
@@ -29,6 +32,7 @@ function insertUsers(){
     processUsers(users);
 }
 
+insertUsers()
 module.exports = {insertUsers}
 
-//funciona INSERTADO
+//funciona INSERTADO y crea el json

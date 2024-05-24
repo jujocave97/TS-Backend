@@ -12,18 +12,18 @@ const {insertTicketTypes} = require('./ticketType');
 const {insertUsers} = require('./user');
 
 function insertAll() {
+    insertOrganizations();
     insertCustomers();
     insertContacts();
     insertGroups();
-    insertActions();
-    insertOrganizations();
     insertProducts();
     insertProductVersions();
-    insertTickets();
-    insertTicketStatuses();
-    insertTicketSeverities();
-    insertTicketTypes();
     insertUsers();
+    insertTicketTypes();
+    insertTicketSeverities();
+    insertTicketStatuses();
+    insertTickets();
+    insertActions();
 }
 
 insertAll();

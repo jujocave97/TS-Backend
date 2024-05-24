@@ -36,5 +36,7 @@ function insertTicketStatuses(){
     processTicketStatus(ticketStatus)
 }
 
+insertTicketStatuses()
+
 module.exports = {insertTicketStatuses}
-// funciona  INSERTADO
+// funciona  INSERTADO y crea json

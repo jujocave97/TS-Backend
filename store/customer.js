@@ -25,4 +25,6 @@ function insertCustomers (){
     processCustomers(customers);
 }
 
+insertCustomers()  // los inserta y crea el JSON
+
 module.exports = {insertCustomers}

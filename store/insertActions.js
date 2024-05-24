@@ -7,10 +7,11 @@ const {createList} = require('./../formats/createListOfJSON');
 
 const ticketList = createList('Tickets');
 
-const directorio = './json/actions'; // Ruta a la carpeta que contiene los archivos JSON
+ // Ruta a la carpeta que contiene los archivos JSON
 
 // Función para leer archivos JSON , cambiar el id de ticket referenciado e insertar actions
-async function insertActions(directorio) {
+async function insertActions() {
+    const directorio = "./json/actions";
     try {
         const archivos = await fs.promises.readdir(directorio);
 
@@ -51,5 +52,8 @@ async function insertActions(directorio) {
 //insertActions(directorio);
 // Llamar a la función principal
 
+insertActions()
+
 module.exports = {insertActions}
 
+// funciona crea json e inserta 

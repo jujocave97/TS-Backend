@@ -25,7 +25,10 @@ function insertProducts() {
     processProducts(products);
 }
 
+insertProducts()
+
 module.exports = {insertProducts}
 // solo se referencia a la organizacion,
 // se le añade el atributo porque en el json generado no aparece y tiene que estar la org a la que pertenece
 // select * FROM products P INNER JOIN organizations O ON P.organizationID = O.id;
+// funciona y crea el json

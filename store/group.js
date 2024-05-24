@@ -12,7 +12,7 @@ function objectList(){
 
 // siempre tiene el mismo valor de organizacion y es la unica clave ajena de la tabla a la que se insertan los grupos
 function processGroups(groups){
-    list.forEach(element => {
+    groups.forEach(element => {
         insertGroup(element);
     });
 }
@@ -21,4 +21,8 @@ function insertGroups (){
     processGroups(list);
 }
 
+
+insertGroups()
 module.exports = {insertGroups}
+
+// funciona y crea el json

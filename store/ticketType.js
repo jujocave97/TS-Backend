@@ -1,5 +1,5 @@
 const  insertTicketType  = require('../services/ticketTypesService');
-
+const {createList} = require('./../formats/createListOfJSON');
 const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
 
@@ -31,4 +31,8 @@ function insertTicketTypes(){
     processTicketTypes(ticketTypes)
 }
 
+insertTicketTypes()
+
 module.exports = {insertTicketTypes}
+
+// funciona, inserta y crea JSON

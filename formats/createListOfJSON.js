@@ -1,10 +1,15 @@
 const fs = require('fs');
-// crea una coleccion leyendo un archivo json a partir del nombre de ruta que se pasa por parametro
-function createList(rute){
-    const data = fs.readFileSync(`./keys/${rute}.json`,'utf8');
+const path = require('path');
+
+// Crea una colección leyendo un archivo JSON a partir del nombre de ruta que se pasa por parámetro
+function createList(rute) {
+    const filePath = path.resolve(__dirname, `./../keys/${rute}.json`);
+    const data = fs.readFileSync(filePath, 'utf8');
     const objectList = JSON.parse(data);
-    const list = objectList.rute;
-    return list;
+    return objectList;
 }
 
-module.exports = {createList}
+// const r = createList('Customers');
+// console.log(r);
+
+module.exports = { createList };

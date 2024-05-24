@@ -1,6 +1,7 @@
-const  insertTicket  = require('../services/ticketService');
+const  {insertTicket}  = require('../services/ticketService');
 const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
+const {createList} = require('./../formats/createListOfJSON');
 
 const productList = createList('Products');
 const groupList = createList('Groups');
@@ -72,6 +73,7 @@ function insertTickets () {
     processTickets(tickets);
 }
 
+insertTickets() 
 
 module.exports = {insertTickets}
-// funciona
+// funciona y crea los json
