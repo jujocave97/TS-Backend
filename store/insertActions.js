@@ -1,68 +1,55 @@
 const fs = require('fs');
 const path = require('path');
 const insertAction = require('../services/actionsService');
+const obtenerTickets = require('../services/ticketService');
+const { exit } = require('process');
+const {createList} = require('./../formats/createListOfJSON');
+
+const ticketList = createList('Tickets');
 
 const directorio = './json/actions'; // Ruta a la carpeta que contiene los archivos JSON
 
-// Función para leer archivos JSON y construir un array con su contenido
-function leerArchivosJson(directorio) {
-    return new Promise((resolve, reject) => {
-        fs.readdir(directorio, (err, archivos) => {
-            if (err) {
-                return reject(`No se pudo leer el directorio: ${err}`);
-            }
+// Función para leer archivos JSON , cambiar el id de ticket referenciado e insertar actions
+async function insertActions(directorio) {
+    try {
+        const archivos = await fs.promises.readdir(directorio);
 
-            // Filtrar solo los archivos JSON
-            archivos = archivos.filter(archivo => path.extname(archivo).toLowerCase() === '.json');
+        // Filtrar solo los archivos JSON
+        const archivosJSON = archivos.filter(archivo => path.extname(archivo).toLowerCase() === '.json');
 
-            let resultados = [];
-            let archivosLeidos = 0;
+        let resultados = [];
 
-            if (archivos.length === 0) {
-                resolve(resultados);
-                return;
-            }
 
-            archivos.forEach(archivo => {
-                const rutaArchivo = path.join(directorio, archivo);
+        for (const archivo of archivosJSON) {
+            const rutaArchivo = path.join(directorio, archivo);
 
-                // Leer el contenido del archivo
-                fs.readFile(rutaArchivo, 'utf8', async (err, contenido) => {
-                    if (err) {
-                        return reject(`No se pudo leer el archivo ${archivo}: ${err}`);
-                    }
+            // Leer el contenido del archivo
+            const contenido = await fs.promises.readFile(rutaArchivo, 'utf8');
+            const datos = JSON.parse(contenido);
+            const actions = datos.Actions;
+            //console.log(actions.length);
 
-                    try {
-                        // Parsear el contenido del archivo JSON
-                        const datos = JSON.parse(contenido);
-                        const actions = datos.Actions;
-                        
-                        console.log(actions);
 
-                        actions.forEach(action => {
-                            insertAction(action); 
-                        });
-
-                        resultados.push(datos);
-                    } catch (err) {
-                        return reject(`Error al parsear el archivo ${archivo}: ${err}`);
-                    }
-
-                    archivosLeidos++;
-                    if (archivosLeidos === archivos.length) {
-                        resolve(resultados);
-                    }
-                });
+            // Modificar los IDs de los tickets
+            actions.forEach(action =>{
+                //console.log(action);
+                const ticketID = ticketList[action.TicketID];
+                action.TicketID = ticketID;
+                insertAction(action);
+        
             });
-        });
-    });
+
+            resultados.push(datos);
+        }
+
+        return resultados;
+    } catch (error) {
+       console.log(error);
+    }
 }
 
-// Uso de la función para leer los archivos JSON y construir el array
-leerArchivosJson(directorio)
-    .then(resultados => {
-        console.log('Array de contenidos JSON:', resultados);
-    })
-    .catch(err => {
-        console.error('Error:', err);
-    });
+insertActions(directorio);
+// Llamar a la función principal
+
+module.exports = {insertActions}
+

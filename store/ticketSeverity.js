@@ -1,6 +1,9 @@
 const  insertTicketSeverity  = require('../services/ticketSeveritiesService');
 const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
+const {createList} = require('./../formats/createListOfJSON');
+
+const userList = createList('Users'); // lista de usuarios id antiguo : id nuevo
 
 function objectList(){
     const data = fs.readFileSync("./json/ticketSeverities.json",'utf8');
@@ -9,18 +12,25 @@ function objectList(){
     return ticketSeverities;
 }
 
-const ticketSeverities = objectList();
+function processTicketSeverities(ticketSeverities){
+    ticketSeverities.forEach(ticket => {
+        const creator = userList[ticket.CreatorID];
+        ticket.CreatorID = creator;
+    
+        const modifier = userList[ticket.ModifierID];
+        ticket.ModifierID = modifier;
+    
+        ticket.DateModified = swapEngCalendar( ticket.DateModified);
+        ticket.DateCreated = swapEngCalendar( ticket.DateCreated);
+        insertTicketSeverity( ticket);
+    });
+}
 
+function insertTicketSeverities() {
+    const ticketSeverities = objectList();
+    processTicketSeverities(ticketSeverities)
+}
 
-ticketSeverities.forEach(ticket => {
-    if ( ticket.CreatorID = 1532741 )
-        ticket.CreatorID = "16e648ff-a2c6-430d-9424-5a72d51279ad";
-    if ( ticket.ModifierID = 1532741 )
-        ticket.ModifierID = "16e648ff-a2c6-430d-9424-5a72d51279ad";
-
-    ticket.DateModified = swapEngCalendar( ticket.DateModified);
-    ticket.DateCreated = swapEngCalendar( ticket.DateCreated);
-    insertTicketSeverity( ticket);
-});
+module.exports = {insertTicketSeverities}
 
 // funciona  INSERTADO

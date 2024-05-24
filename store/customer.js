@@ -10,13 +10,19 @@ function objectList(){
     return customers;
 }
 
-const customers = objectList();
-
-
-customers.forEach(customer => {
-    customer.DateModified = swapEngCalendar( customer.DateModified);
-    customer.DateCreated = swapEngCalendar( customer.DateCreated);
-    insertCustomer( customer);
-});
+// no hace falta referenciar ninguna tabla, el campo ajeno es la organizacion y siempre es el mismo valor
+function processCustomers( customers ){
+    customers.forEach(customer => {
+        customer.DateModified = swapEngCalendar( customer.DateModified);
+        customer.DateCreated = swapEngCalendar( customer.DateCreated);
+        insertCustomer( customer);
+    });
+}
 // funciona insertado
 
+function insertCustomers (){
+    const customers = objectList();
+    processCustomers(customers);
+}
+
+module.exports = {insertCustomers}

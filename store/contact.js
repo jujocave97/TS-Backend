@@ -11,19 +11,27 @@ function objectList(){
     return contacts;
 }
 
-const contacts = objectList();
 
 
-contacts.forEach(contact => {
-    contact.CustomerID = contact.OrganizationID
-    contact.OrganizationID = 748448;
-    contact.DateModified = swapEngCalendar( contact.DateModified);
-    contact.DateCreated = swapEngCalendar( contact.DateCreated);
-    contact.LastLogin = swapEngCalendar( contact.LastLogin);
-    contact.LastActivity = swapEngCalendar( contact.LastActivity);
+// siempre va a tener el mismo valor de organizacion
+function processContacts( contacts ){
+    contacts.forEach(contact => {
+        contact.CustomerID = contact.OrganizationID
+        contact.OrganizationID = 748448;
+        contact.DateModified = swapEngCalendar( contact.DateModified);
+        contact.DateCreated = swapEngCalendar( contact.DateCreated);
+        contact.LastLogin = swapEngCalendar( contact.LastLogin);
+        contact.LastActivity = swapEngCalendar( contact.LastActivity);
+    
+        insertContact( contact);
+    });
+}
 
-    insertContact( contact);
-});
+function insertContacts(){
+    const contacts = objectList();
+    processContacts(contacts);
+}
 
+module.exports = {insertContact}
 
 // funciona insertado 

@@ -11,11 +11,20 @@ function objectList(){
 
 const productV = objectList();
 
-productV.forEach(product => {
-    product.DateModified = swapEngCalendar( product.DateModified);
-    product.DateCreated = swapEngCalendar( product.DateCreated);
-    insertProductVerion( product);
-});
+function processProducts(productV){
+    productV.forEach(product => {
+        product.DateModified = swapEngCalendar( product.DateModified);
+        product.DateCreated = swapEngCalendar( product.DateCreated);
+        insertProductVerion( product);
+    });
+}
 
 
+function insertProductVersions () {
+    const productV = objectList();
+    processProducts(productV);
+}
+
+module.exports = {insertProductVersions}
+// solo se referencia a la organizacion y solo hay una organizacion en el sistema
 // funciona insertado

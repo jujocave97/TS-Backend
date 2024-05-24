@@ -81,6 +81,9 @@ const TicketSchema = {
     TicketNumber: {
       type: DataTypes.INTEGER
     },
+    OldID: {
+      type: DataTypes.INTEGER
+    },
     Tags: {
       type: DataTypes.INTEGER,
       allowNull: true,

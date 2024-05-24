@@ -1,12 +1,12 @@
 const  insertOrganization  = require('../services/organizationService');
 const fs = require ('fs');
 
-
-const organizacion = {
-    id: 748452,
-    name: 'Viticultores'
+function insertOrganizations(){
+    const organizacion = {
+        id: 748448,
+        name: 'IDITIC-SANDBOX'
+    }
+    insertOrganization(organizacion);
 }
 
-insertOrganization(organizacion);
-
-//funciona insertado
+module.exports = {insertOrganizations}

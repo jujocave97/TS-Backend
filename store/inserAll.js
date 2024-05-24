@@ -1,0 +1,1 @@
+const {insertCustomers} = require('./customer');

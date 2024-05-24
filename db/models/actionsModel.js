@@ -17,7 +17,7 @@ const ActionsSchema = {
       type: DataTypes.STRING,
       defaultValue: null
     },
-    Description: {
+    Descript: {
       type: DataTypes.STRING,
       defaultValue: null
     },
