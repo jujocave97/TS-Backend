@@ -9,4 +9,6 @@ async function insertOrganizations(){
     await insertOrganization(organizacion);
 }
 
+insertOrganizations()
+
 module.exports = {insertOrganizations}

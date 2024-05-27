@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-function addTOJson(clave, valor, rutaArchivo) { // cambiar nombre
+function addTOJson(clave, valor, rutaArchivo) {
   // Objeto con la clave y el valor que deseas agregar
   const nuevaData = {
     [clave]: valor

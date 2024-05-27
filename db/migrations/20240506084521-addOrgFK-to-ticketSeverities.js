@@ -6,7 +6,7 @@ const { TICKETSEVERITIES_TABLE} = require('./../models/ticketSeveritiesModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(TICKETSEVERITIES_TABLE, "organizationID", {
+    queryInterface.changeColumn(TICKETSEVERITIES_TABLE, "organizationID", {
       allowNull: false,
       type: DataTypes.INTEGER,
       unique: false,

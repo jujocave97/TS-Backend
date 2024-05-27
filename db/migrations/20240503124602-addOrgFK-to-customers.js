@@ -6,7 +6,7 @@ const { CUSTOMER_TABLE, CustomerSchema} = require('./../models/customerModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(CUSTOMER_TABLE, "organizationID", {
+    queryInterface.changeColumn(CUSTOMER_TABLE, "organizationID", {
       allowNull: false,
       type: DataTypes.INTEGER,
       unique: false,

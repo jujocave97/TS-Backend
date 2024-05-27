@@ -7,7 +7,7 @@ const { CONTACT_TABLE} = require('./../models/contactsModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(CONTACT_TABLE, "CustomerID", {
+    queryInterface.changeColumn(CONTACT_TABLE, "CustomerID", {
       allowNull: true,
       type: DataTypes.UUID,
       unique: false,

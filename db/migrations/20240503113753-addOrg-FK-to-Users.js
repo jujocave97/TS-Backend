@@ -6,7 +6,7 @@ const { USER_TABLE, UserSchema} = require('./../models/userModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(USER_TABLE, "organizationID", {
+    queryInterface.changeColumn(USER_TABLE, "organizationID", {
       allowNull: false,
       type: DataTypes.INTEGER,
       unique: false,

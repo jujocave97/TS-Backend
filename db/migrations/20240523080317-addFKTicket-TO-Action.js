@@ -7,7 +7,7 @@ const { TICKET_TABLE} = require('./../models/ticketModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(ACTION_TABLE, "TicketID", {
+    queryInterface.changeColumn(ACTION_TABLE, "TicketID", {
       allowNull: true,
       type: DataTypes.UUID,
       unique: false,

@@ -7,7 +7,7 @@ Ticket.init(TicketSchema, Ticket.config(seq));
 async function insertTicket(dataTicket) {
     try {
       const newTicket = await Ticket.create(dataTicket);
-      addTOJson(dataTicket.ID, newTicket.id, './keys/Tickets.json');
+      await addTOJson(dataTicket.ID, newTicket.id, './keys/Tickets.json');
       console.log('Nuevo ID de ticket:', newTicket);
     } catch (error) {
       console.error('Error al insertar el ticket:', error);

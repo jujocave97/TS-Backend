@@ -6,7 +6,7 @@ const { ORGANIZATION_TABLE } = require('./../models/organizationModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(PRODUCT_TABLE, "organizationID", {
+    queryInterface.changeColumn(PRODUCT_TABLE, "organizationID", {
       allowNull: false,
       type: DataTypes.INTEGER,
       unique: false,

@@ -6,7 +6,7 @@ const { PRODUCTVERSION_TABLE} = require('./../models/productVerionStatuses');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(PRODUCTVERSION_TABLE, "organizationID", {
+    queryInterface.changeColumn(PRODUCTVERSION_TABLE, "organizationID", {
       allowNull: false,
       type: DataTypes.INTEGER,
       unique: false,

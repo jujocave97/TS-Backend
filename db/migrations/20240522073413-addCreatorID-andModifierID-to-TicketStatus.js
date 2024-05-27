@@ -7,7 +7,7 @@ const { USER_TABLE} = require('./../models/userModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(TICKETSTATUSES_TABLE, "CreatorID", {
+    queryInterface.changeColumn(TICKETSTATUSES_TABLE, "CreatorID", {
       allowNull: true,
       type: DataTypes.UUID,
       unique: false,
@@ -18,7 +18,7 @@ module.exports = {
       onUpdate: 'NO ACTION',
       onDelete: 'NO ACTION'
     });
-    queryInterface.addColumn(TICKETSTATUSES_TABLE, "ModifierID", {
+    queryInterface.changeColumn(TICKETSTATUSES_TABLE, "ModifierID", {
       allowNull: true,
       type: DataTypes.UUID,
       unique: false,

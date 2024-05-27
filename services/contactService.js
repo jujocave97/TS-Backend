@@ -10,7 +10,7 @@ async function insertContact(dataContact) {
       console.log(dataContact.Custo)
       
       const newContact = await Contact.create(dataContact);
-      addTOJson(dataContact.ID, newContact.id, './keys/Contacts.json');
+      await addTOJson(dataContact.ID, newContact.id, './keys/Contacts.json');
       console.log('Nuevo ID del contacto:', newContact.id);
     } catch (error) {
       console.error('Error al insertar el contacto:', error);

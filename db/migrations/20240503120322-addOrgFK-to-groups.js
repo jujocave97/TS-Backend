@@ -6,7 +6,7 @@ const { GROUP_TABLE, GroupSchema} = require('./../models/groupModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(GROUP_TABLE, "organizationID", {
+    queryInterface.changeColumn(GROUP_TABLE, "organizationID", {
       allowNull: false,
       type: DataTypes.INTEGER,
       unique: false,

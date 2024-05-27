@@ -8,7 +8,7 @@ const { CONTACT_TABLE, contactSchema} = require('./../models/contactsModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(TICKETSTATUSES_TABLE, "organizationID", {
+    queryInterface.changeColumn(TICKETSTATUSES_TABLE, "organizationID", {
       allowNull: false,
       type: DataTypes.INTEGER,
       unique: false,
@@ -19,7 +19,7 @@ module.exports = {
       onUpdate: 'CASCADE',
       onDelete: 'CASCADE'
     });
-    queryInterface.addColumn(CONTACT_TABLE, "organizationID", {
+    queryInterface.changeColumn(CONTACT_TABLE, "organizationID", {
       allowNull: false,
       type: DataTypes.INTEGER,
       unique: false,

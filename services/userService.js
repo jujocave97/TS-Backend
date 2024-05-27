@@ -6,7 +6,7 @@ User.init(UserSchema, User.config(seq));
 async function insertUser(dataUser) {
     try {
       const newUser = await User.create(dataUser);
-      addTOJson(dataUser.ID, newUser.id, './keys/Users.json');
+      await addTOJson(dataUser.ID, newUser.id, './keys/Users.json');
       console.log('Nuevo ID de Usuario:', newUser.id);
     } catch (error) {
       console.error('Error al insertar el usuario:', error);

@@ -7,7 +7,7 @@ const { GROUP_TABLE} = require('./../models/groupModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(CONTACT_TABLE, "groupID", {
+    queryInterface.changeColumn(CONTACT_TABLE, "groupID", {
       allowNull: false,
       type: DataTypes.UUID,
       unique: false,
