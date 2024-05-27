@@ -1,9 +1,9 @@
-const  insertTicketStatus  = require('../services/ticketStatusesService');
+const  {insertTicketStatus}  = require('../services/ticketStatusesService');
 const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createList} = require('./../formats/createListOfJSON');
 
-const ticketTypeList = createList('TicketTypes');
+
 const userList = createList('Users');
 
 function objectList(){
@@ -14,7 +14,9 @@ function objectList(){
 }
 
 async function processTicketStatus(ticketStatus){
-    
+
+    const ticketTypeList =await createList('TicketTypes');
+
     ticketStatus.forEach(async ticket => {
         const creator = userList[ticket.CreatorID];
         ticket.CreatorID = creator;
@@ -22,8 +24,9 @@ async function processTicketStatus(ticketStatus){
         const modifier = userList[ticket.ModifierID];
         ticket.ModifierID = modifier;
 
-        const type = ticketTypeList[ticket.TicketTypeID];
-        ticket.TicketTypeID = type;
+        if (ticket.TicketTypeID in ticketTypeList){
+            ticket.TicketTypeID = ticketTypeList[ticket.TicketTypeID]
+        }
 
         ticket.DateModified = swapEngCalendar( ticket.DateModified);
         ticket.DateCreated = swapEngCalendar( ticket.DateCreated);

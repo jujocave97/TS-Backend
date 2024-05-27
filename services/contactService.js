@@ -5,15 +5,18 @@ const {addTOJson} = require('../keys/addToKeysToJSON');
 Contact.init(contactSchema, Contact.config(seq));
 
 async function insertContact(dataContact) {
+  //let transaction;
     try {
-      dataContact.CustomerID = dataContact.OrganizationID
-      console.log(dataContact.Custo)
+      //transaction = await seq.transaction();
       
       const newContact = await Contact.create(dataContact);
       await addTOJson(dataContact.ID, newContact.id, './keys/Contacts.json');
       console.log('Nuevo ID del contacto:', newContact.id);
+      //await transaction.commit();
     } catch (error) {
       console.error('Error al insertar el contacto:', error);
+    //   if (transaction) await transaction.rollback();
+    // console.error('Error al insertar el producto:', error);
     }
 }
 

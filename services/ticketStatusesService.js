@@ -14,4 +14,4 @@ async function insertTicketStatus(dataTS) {
     }
 }
 
-module.exports = insertTicketStatus;
+module.exports = {insertTicketStatus};

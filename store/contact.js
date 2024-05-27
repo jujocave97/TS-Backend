@@ -15,6 +15,7 @@ async function processContacts(contacts, customerList) {
         if (contact.OrganizationID in customerList) {
             contact.CustomerID = customerList[contact.OrganizationID];
         }
+        console.log("customer id: "+contact.CustomerID)
         contact.OrganizationID = 748448;
         
         contact.DateModified = swapEngCalendar(contact.DateModified);

@@ -13,20 +13,28 @@ const { insertUsers } = require('./user');
 
 async function insertAll() {
     try {
-        await insertOrganizations();
-        await insertCustomers();
-        await insertContacts();
-        await insertGroups();
-        await insertProducts();
-        await insertProductVersions();
-        await insertUsers();
-        await insertTicketTypes();
-        await insertTicketSeverities();
-        await insertTicketStatuses();
-        await insertTickets();
-        await insertActions();
+        const methods = [
+            insertOrganizations,
+            insertCustomers,
+            insertContacts,
+            insertGroups,
+            insertProducts,
+            insertProductVersions,
+            insertUsers,
+            insertTicketTypes,
+            insertTicketSeverities,
+            insertTicketStatuses,
+            insertTickets,
+            insertActions
+        ];
+       
+        for (const method of methods) {
+            await method();
+        }
+
+        console.log('Todos los métodos se han ejecutado correctamente.');
     } catch (error) {
-        console.error('Error inserting data:', error);
+        console.error('Error al insertar datos:', error);
     }
 }
 

@@ -3,12 +3,7 @@ const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createList} = require('./../formats/createListOfJSON');
 
-const productList = createList('Products');
-const groupList = createList('Groups');
-const userList = createList('Users');
-const ticketStatusList = createList('TicketStatus');
-const ticketTypeList = createList('TicketTypes');
-const ticketSeverityList = createList('TicketSeverities');
+
 
 function objectList(){
     const data = fs.readFileSync("./json/tickets.json",'utf8');
@@ -18,6 +13,13 @@ function objectList(){
 }
 
 async function processTickets(tickets){
+    const productList =await createList('Products');
+    const groupList =await createList('Groups');
+    const userList =await createList('Users');
+    const ticketStatusList =await createList('TicketStatus');
+    const ticketTypeList = await createList('TicketTypes');
+    const ticketSeverityList =await createList('TicketSeverities');
+    
     tickets.forEach(async ticket => {
 
         if(ticket.ProductID in productList){
