@@ -17,12 +17,16 @@ async function processGroups(groups){
     });
 }
 async function insertGroups (){
-    const list = objectList();
-    await processGroups(list);
+    try{
+        const list = objectList();
+        await processGroups(list);
+        console.log("Se han insertado los grupos ");
+    }catch(error){
+        console.log("Error en la insercion de grupos", error);
+    }
+    
 }
 
-
-insertGroups()
 module.exports = {insertGroups}
 
 // funciona y crea el json

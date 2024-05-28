@@ -3,9 +3,9 @@ const path = require('path');
 const insertAction = require('../services/actionsService');
 const obtenerTickets = require('../services/ticketService');
 const { exit } = require('process');
-const {createList} = require('./../formats/createListOfJSON');
+const {createListSync} = require('./../formats/createListOfJSON');
 
-const ticketList = createList('Tickets');
+const ticketList = createListSync('Tickets');
 
  // Ruta a la carpeta que contiene los archivos JSON
 
@@ -49,10 +49,6 @@ async function insertActions() {
     }
 }
 
-//insertActions(directorio);
-// Llamar a la función principal
-
-insertActions()
 
 module.exports = {insertActions}
 

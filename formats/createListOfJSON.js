@@ -1,11 +1,11 @@
-const fs = require('fs/promises');
+const fs = require('fs');
 const path = require('path');
 
 // Crea una colección leyendo un archivo JSON a partir del nombre de ruta que se pasa por parámetro
-async function createList(rute) {
+function createListSync(rute) {
     const filePath = path.resolve(__dirname, `./../keys/${rute}.json`);
     try {
-        const data = await fs.readFile(filePath, 'utf8');
+        const data = fs.readFileSync(filePath, 'utf8');
         const objectList = JSON.parse(data);
         return objectList;
     } catch (error) {
@@ -14,14 +14,13 @@ async function createList(rute) {
     }
 }
 
+// Llamada de ejemplo a la función síncrona
+try {
+    const r = createListSync('Customers');
+    console.log(r);
+} catch (error) {
+    console.error('Error creando la lista:', error);
+}
 
-(async () => {
-    try {
-        const r = await createList('Customers');
-        console.log(r);
-    } catch (error) {
-        console.error('Error creando la lista:', error);
-    }
-})();
 
-module.exports = { createList };
+module.exports = { createListSync };

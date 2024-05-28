@@ -1,9 +1,9 @@
 const  insertTicketSeverity  = require('../services/ticketSeveritiesService');
 const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
-const {createList} = require('./../formats/createListOfJSON');
+const {createListSync} = require('./../formats/createListOfJSON');
 
-const userList = createList('Users'); // lista de usuarios id antiguo : id nuevo
+const userList = createListSync('Users'); // lista de usuarios id antiguo : id nuevo
 
 function objectList(){
     const data = fs.readFileSync("./json/ticketSeverities.json",'utf8');
@@ -27,11 +27,17 @@ async function processTicketSeverities(ticketSeverities){
 }
 
 async function insertTicketSeverities() {
-    const ticketSeverities = objectList();
-    await processTicketSeverities(ticketSeverities)
+    try{
+        const ticketSeverities = objectList();
+        await processTicketSeverities(ticketSeverities);
+        console.log("Se han introducido correctamente los severities tickets");
+    }catch(error){
+        console.log("Error al introducir severities tickets");
+    }
+    
 }
 
-insertTicketSeverities()
+
 
 module.exports = {insertTicketSeverities}
 

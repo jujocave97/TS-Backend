@@ -1,10 +1,10 @@
 const  {insertTicketStatus}  = require('../services/ticketStatusesService');
 const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
-const {createList} = require('./../formats/createListOfJSON');
+const {createListSync} = require('./../formats/createListOfJSON');
 
 
-const userList = createList('Users');
+const userList = createListSync('Users');
 
 function objectList(){
     const data = fs.readFileSync("./json/ticketStatus.json",'utf8');
@@ -13,9 +13,9 @@ function objectList(){
     return ticketSeverities;
 }
 
-async function processTicketStatus(ticketStatus){
+ async function processTicketStatus(ticketStatus){
 
-    const ticketTypeList =await createList('TicketTypes');
+    const ticketTypeList = createListSync('TicketTypes');
 
     ticketStatus.forEach(async ticket => {
         const creator = userList[ticket.CreatorID];
@@ -35,11 +35,14 @@ async function processTicketStatus(ticketStatus){
 }
 
 async function insertTicketStatuses(){
-    const ticketStatus = objectList();
-    await processTicketStatus(ticketStatus)
+    try{
+        const ticketStatus = objectList();
+        await processTicketStatus(ticketStatus);
+    }catch(error){
+        console.log("Error al introducir ticket status", error);
+    }
+    
 }
-
-insertTicketStatuses()
 
 module.exports = {insertTicketStatuses}
 // funciona  INSERTADO y crea json

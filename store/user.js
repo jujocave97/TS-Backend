@@ -1,8 +1,8 @@
 const insertUser = require('./../services/userService');
 const path = require('path');
 const {swapEngCalendar} = require('./../formats/changeDate');
-const {createList} = require('./../formats/createListOfJSON');
-const groupList = createList('Groups');
+const {createListSync} = require('./../formats/createListOfJSON');
+const groupList = createListSync('Groups');
 const fs = require ('fs');
 
 function objectList(){
@@ -27,12 +27,16 @@ async function processUsers(users){
     });
 }
 
-async function insertUsers(){
+ async function insertUsers(){
+   try{
     const users = objectList();
-    await processUsers(users);
+    processUsers(users);
+    console.log("Se ha introducido correctamente los usuarios");
+   }catch(error){
+        console.log("Error al introducir los usuarios ", error);
+   }
 }
 
-insertUsers()
 module.exports = {insertUsers}
 
 //funciona INSERTADO y crea el json

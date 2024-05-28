@@ -21,11 +21,15 @@ async function processProducts(products){
 }
  
 async function insertProducts() {
-    const products = objectList();
-    await processProducts(products);
+    try{
+        const products = objectList();
+        await processProducts(products);
+        console.log("Se han insertado los productos");
+    }catch(error){
+        console.log("Error al insertar productos ", error);
+    }
+    
 }
-
-insertProducts()
 
 module.exports = {insertProducts}
 // solo se referencia a la organizacion,

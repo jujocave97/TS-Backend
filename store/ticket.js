@@ -1,7 +1,7 @@
 const  {insertTicket}  = require('../services/ticketService');
 const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
-const {createList} = require('./../formats/createListOfJSON');
+const {createListSync} = require('./../formats/createListOfJSON');
 
 
 
@@ -13,12 +13,12 @@ function objectList(){
 }
 
 async function processTickets(tickets){
-    const productList =await createList('Products');
-    const groupList =await createList('Groups');
-    const userList =await createList('Users');
-    const ticketStatusList =await createList('TicketStatus');
-    const ticketTypeList = await createList('TicketTypes');
-    const ticketSeverityList =await createList('TicketSeverities');
+    const productList = createListSync('Products');
+    const groupList = createListSync('Groups');
+    const userList = createListSync('Users');
+    const ticketStatusList = createListSync('TicketStatus');
+    const ticketTypeList =  createListSync('TicketTypes');
+    const ticketSeverityList = createListSync('TicketSeverities');
     
     tickets.forEach(async ticket => {
 
@@ -71,11 +71,15 @@ async function processTickets(tickets){
 }
 
 async function insertTickets () {
-    const tickets = objectList();
-    await processTickets(tickets);
+    try{
+        const tickets = objectList();
+        processTickets(tickets);
+        console.log("Se han introducido los tickets correctamente");
+    }catch(error){
+        console.log ("Error al introducir los tickets", error);
+    }
+    
 }
-
-insertTickets() 
 
 module.exports = {insertTickets}
 // funciona y crea los json

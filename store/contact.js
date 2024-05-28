@@ -1,17 +1,18 @@
 const insertContact = require('../services/contactService');
 const { swapEngCalendar } = require('./../formats/changeDate');
-const fs = require('fs/promises');
-const { createList } = require('./../formats/createListOfJSON');
+const fs = require('fs');
+const { createListSync } = require('./../formats/createListOfJSON');
 
-async function objectList() {
-    const data = await fs.readFile("./json/contacts.json", 'utf8');
+function objectList() {
+    const data = fs.readFileSync("./json/contacts.json", 'utf8');
     const objectList = JSON.parse(data);
     const contacts = objectList.Contacts;
     return contacts;
 }
 
-async function processContacts(contacts, customerList) {
-    for (const contact of contacts) {
+async function processContacts(contacts) {
+    const customerList =  createListSync('Customers');
+    contacts.forEach(async contact => {
         if (contact.OrganizationID in customerList) {
             contact.CustomerID = customerList[contact.OrganizationID];
         }
@@ -24,19 +25,17 @@ async function processContacts(contacts, customerList) {
         contact.LastActivity = swapEngCalendar(contact.LastActivity);
 
         await insertContact(contact);
-    }
+    });
 }
 
 async function insertContacts() {
     try {
-        const customerList = await createList('Customers');
-        const contacts = await objectList();
+        const contacts =  objectList();
         await processContacts(contacts, customerList);
     } catch (error) {
         console.error('Error inserting contacts:', error);
     }
 }
 
-insertContacts();
 
 module.exports = { insertContacts };

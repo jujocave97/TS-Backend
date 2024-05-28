@@ -9,8 +9,6 @@ function objectList(){
     return productV;
 }
 
-const productV = objectList();
-
 async function processProducts(productV){
     productV.forEach(async product => {
         product.DateModified = swapEngCalendar( product.DateModified);
@@ -21,11 +19,16 @@ async function processProducts(productV){
 
 
 async function insertProductVersions () {
-    const productV = objectList();
-    await processProducts(productV);
+    try {
+        const productV = objectList();
+        await processProducts(productV);
+        console.log("Se han introducido correctamente los version products");
+    }catch(error){
+        console.log("Error al introducir los version products ", error);
+    }
+    
 }
 
-insertProductVersions()
 module.exports = {insertProductVersions}
 // solo se referencia a la organizacion y solo hay una organizacion en el sistema
 // funciona insertado y crea el json

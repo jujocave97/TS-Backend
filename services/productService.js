@@ -6,7 +6,7 @@ Product.init(ProductSchema, Product.config(seq));
 async function insertProduct(dataProduct) {
   try {
     const newProduct = await Product.create(dataProduct);
-    await addTOJson(dataProduct.ID, newProduct.id, './keys/Products.json');
+    addTOJson(dataProduct.ID, newProduct.id, './keys/Products.json');
     console.log('Nuevo ID de grupo:', newProduct.id);
   } catch (error) {
     console.error('Error al insertar el grupo:', error);

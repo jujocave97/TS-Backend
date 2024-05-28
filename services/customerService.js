@@ -7,7 +7,7 @@ Customer.init(CustomerSchema, Customer.config(seq));
 async function insertCustomer(dataCustomer) {
     try {
       const newCustomer = await Customer.create(dataCustomer);
-      await addTOJson(dataCustomer.ID, newCustomer.id, './keys/Customers.json');
+      addTOJson(dataCustomer.ID, newCustomer.id, './keys/Customers.json');
       console.log('Nuevo ID del cliente:', newCustomer.id);
     } catch (error) {
       console.error('Error al insertar el cliente:', error);

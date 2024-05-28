@@ -1,7 +1,7 @@
 const  insertOrganization  = require('../services/organizationService');
 const fs = require ('fs');
 
-async function insertOrganizations(){
+ async function insertOrganizations(){
     const organizacion = {
         id: 748448,
         name: 'IDITIC-SANDBOX'
@@ -9,6 +9,5 @@ async function insertOrganizations(){
     await insertOrganization(organizacion);
 }
 
-insertOrganizations()
 
 module.exports = {insertOrganizations}

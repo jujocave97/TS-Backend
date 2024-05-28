@@ -20,11 +20,16 @@ async function processCustomers( customers ){
 }
 // funciona insertado
 
-async function insertCustomers (){
-    const customers = objectList();
-    await processCustomers(customers);
+async function insertCustomers(){
+    try{
+        const customers = objectList();
+        await processCustomers(customers);
+        console.log('Todos los clientes se han insertado correctamente.');
+    }catch(error){
+        console.error('Error al insertar clientes:', error);
+    }
+    
 }
 
-insertCustomers()  // los inserta y crea el JSON
 
 module.exports = {insertCustomers}
