@@ -21,4 +21,4 @@ async function insertContact(dataContact) {
 }
 
 
-module.exports = insertContact;
+module.exports = {insertContact};

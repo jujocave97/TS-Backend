@@ -60,17 +60,17 @@ const CustomerSchema = {
       type: DataTypes.STRING,
     },
     SupportHours: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     SupportHoursUsed: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: "0",
     },
     SupportHoursRemaining: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 0
+      defaultValue: "0"
     },
     NeedsIndexing: {
       type: DataTypes.BOOLEAN,

@@ -1,4 +1,4 @@
-const  insertTicketType  = require('../services/ticketTypesService');
+const  {insertTicketType}  = require('../services/ticketTypesService');
 const {createListSync} = require('./../formats/createListOfJSON');
 const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');

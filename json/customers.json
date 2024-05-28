@@ -27,14 +27,13 @@
             "DefaultSupportUser": null,
             "Domains": null,
             "SupportHours": null,
-            "SupportHoursUsed": 0.00000000,
-            "SupportHoursRemaining": 0.00000000,
+            "SupportHoursUsed": "0.00000000",
+            "SupportHoursRemaining": "0.00000000",
             "NeedsIndexing": "True",
             "CustDisIndex": "6",
             "CustDistIndexTrend": "0",
             "EmailTicketActions": "True",
-            "EntityID": null,
-            "OrganizationID": 748448
+            "EntityID": null
         },
         {
             "ID": "748450",
@@ -63,14 +62,13 @@
             "DefaultSupportUser": ", sergio",
             "Domains": null,
             "SupportHours": "0",
-            "SupportHoursUsed": 1.10000000,
-            "SupportHoursRemaining":0.00000000,
+            "SupportHoursUsed": "1.10000000",
+            "SupportHoursRemaining": "0.00000000",
             "NeedsIndexing": "False",
             "CustDisIndex": "5",
             "CustDistIndexTrend": "0",
             "EmailTicketActions": "True",
-            "EntityID": null,
-            "OrganizationID": 748448
+            "EntityID": null
         },
         {
             "ID": "748452",
@@ -99,14 +97,13 @@
             "DefaultSupportUser": null,
             "Domains": null,
             "SupportHours": "0",
-            "SupportHoursUsed": 0.00000000,
-            "SupportHoursRemaining": 0.00000000,
+            "SupportHoursUsed": "0.00000000",
+            "SupportHoursRemaining": "0.00000000",
             "NeedsIndexing": "False",
             "CustDisIndex": "100",
             "CustDistIndexTrend": "0",
             "EmailTicketActions": "True",
-            "EntityID": null,
-            "OrganizationID": 748448
+            "EntityID": null
         }
     ]
 }

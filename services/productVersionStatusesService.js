@@ -14,4 +14,4 @@ async function insertProductVerion(dataPV) {
     }
 }
 
-module.exports = insertProductVerion;
+module.exports = {insertProductVerion};

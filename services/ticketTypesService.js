@@ -14,4 +14,4 @@ async function insertTicketType(dataTT) {
     }
 }
 
-module.exports = insertTicketType;
+module.exports = {insertTicketType};

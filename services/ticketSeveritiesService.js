@@ -14,4 +14,4 @@ async function insertTicketSeverity(dataTS) {
     }
 }
 
-module.exports = insertTicketSeverity;
+module.exports = {insertTicketSeverity};

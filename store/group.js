@@ -1,4 +1,4 @@
-const  insertGroup  = require('../services/groupService');
+const  {insertGroup}  = require('../services/groupService');
 const path = require('path');
 const fs = require ('fs');
 

@@ -1,4 +1,4 @@
-const  insertOrganization  = require('../services/organizationService');
+const  {insertOrganization}  = require('../services/organizationService');
 const fs = require ('fs');
 
  async function insertOrganizations(){

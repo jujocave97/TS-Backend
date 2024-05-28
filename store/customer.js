@@ -1,4 +1,4 @@
-const  insertCustomer  = require('../services/customerService');
+const  {insertCustomer}  = require('../services/customerService');
 const path = require('path');
 const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
@@ -13,6 +13,7 @@ function objectList(){
 // no hace falta referenciar ninguna tabla, el campo ajeno es la organizacion y siempre es el mismo valor
 async function processCustomers( customers ){
     customers.forEach(async customer => {
+        customer.OrganizationID = 748448
         customer.DateModified = swapEngCalendar( customer.DateModified);
         customer.DateCreated = swapEngCalendar( customer.DateCreated);
         await insertCustomer( customer);

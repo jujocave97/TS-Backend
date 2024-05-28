@@ -14,4 +14,4 @@ async function insertGroup(dataGroup) {
     }
 }
 
-module.exports = insertGroup;
+module.exports = {insertGroup};

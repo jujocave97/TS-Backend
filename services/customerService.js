@@ -14,4 +14,4 @@ async function insertCustomer(dataCustomer) {
     }
 }
 
-module.exports = insertCustomer;
+module.exports = {insertCustomer};

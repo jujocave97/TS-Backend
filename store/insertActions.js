@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const insertAction = require('../services/actionsService');
-const obtenerTickets = require('../services/ticketService');
+const {obtenerTickets} = require('../services/ticketService');
 const { exit } = require('process');
 const {createListSync} = require('./../formats/createListOfJSON');
 

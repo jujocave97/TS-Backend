@@ -16,15 +16,15 @@ async function insertAll() {
         await insertOrganizations();
         await insertCustomers();
         await insertContacts();
-        await insertGroups();
-        await insertProducts();
-        await insertProductVersions();
-        await insertUsers();
-        await insertTicketTypes();
-        await insertTicketSeverities();
-        await insertTicketStatuses();
-        await insertTickets();
-        await insertActions();
+        // await insertGroups();
+        // await insertProducts();
+        // await insertProductVersions()    ;
+        // await insertUsers();
+        // await insertTicketTypes();
+        // await insertTicketSeverities();
+        // await insertTicketStatuses();
+        // await insertTickets();
+        // await insertActions();
     } catch (error) {
         console.error('Error inserting data:', error);
     }

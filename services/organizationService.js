@@ -14,4 +14,4 @@ try{
 }
 
 
-module.exports = insertOrganization;
+module.exports = {insertOrganization};

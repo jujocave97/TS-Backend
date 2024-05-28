@@ -1,4 +1,4 @@
-const  insertProduct  = require('../services/productService');
+const  {insertProduct}  = require('../services/productService');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const path = require('path');
 const fs = require ('fs');

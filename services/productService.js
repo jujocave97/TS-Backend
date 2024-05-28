@@ -14,4 +14,4 @@ async function insertProduct(dataProduct) {
 }
 
 
-module.exports = insertProduct;
+module.exports = {insertProduct};

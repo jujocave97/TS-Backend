@@ -1,4 +1,4 @@
-const  insertProductVerion  = require('../services/productVersionStatusesService');
+const  {insertProductVerion}  = require('../services/productVersionStatusesService');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const fs = require ('fs');
 

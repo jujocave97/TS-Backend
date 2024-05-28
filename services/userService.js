@@ -13,4 +13,4 @@ async function insertUser(dataUser) {
     }
 }
 
-module.exports = insertUser;
+module.exports = {insertUser};

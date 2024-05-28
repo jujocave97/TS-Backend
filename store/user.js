@@ -1,4 +1,4 @@
-const insertUser = require('./../services/userService');
+const {insertUser} = require('./../services/userService');
 const path = require('path');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
