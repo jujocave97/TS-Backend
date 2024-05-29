@@ -4,7 +4,7 @@ const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
 
 
-const userList = createListSync('Users');
+
 
 function objectList(){
     const data = fs.readFileSync("./json/ticketStatus.json",'utf8');
@@ -14,8 +14,8 @@ function objectList(){
 }
 
  async function processTicketStatus(ticketStatus){
-
-    const ticketTypeList = createListSync('TicketTypes');
+    const userList =await createListSync('Users');
+    const ticketTypeList = await createListSync('TicketTypes');
 
     ticketStatus.forEach(async ticket => {
         const creator = userList[ticket.CreatorID];

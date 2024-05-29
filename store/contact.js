@@ -16,7 +16,7 @@ async function processContacts(contacts) {
     
         contact.CustomerID = customerList[contact.OrganizationID];
        
-        console.log("customer id: "+contact.CustomerID)
+        console.log("customer id: "+contact.CustomerID)  // esta leyendo los ids anteriores
         contact.OrganizationID = 748448;
         
         contact.DateModified = swapEngCalendar(contact.DateModified);
@@ -27,6 +27,7 @@ async function processContacts(contacts) {
         await insertContact(contact); 
     });
 }
+
 
 async function insertContacts() {
     try {

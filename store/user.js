@@ -2,7 +2,7 @@ const {insertUser} = require('./../services/userService');
 const path = require('path');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
-const groupList = createListSync('Groups');
+
 const fs = require ('fs');
 
 function objectList(){
@@ -13,6 +13,7 @@ function objectList(){
 }
 
 async function processUsers(users){
+    const groupList =await createListSync('Groups');
     users.forEach(async user => {
         if(user.GroupID in groupList){
             const group = groupList[user.GroupID];

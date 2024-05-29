@@ -7,9 +7,9 @@ async function insertProduct(dataProduct) {
   try {
     const newProduct = await Product.create(dataProduct);
     addTOJson(dataProduct.ID, newProduct.id, './keys/Products.json');
-    console.log('Nuevo ID de grupo:', newProduct.id);
+    console.log('Nuevo ID de producto:', newProduct.id);
   } catch (error) {
-    console.error('Error al insertar el grupo:', error);
+    console.error('Error al insertar el producto:', error);
   }
 }
 

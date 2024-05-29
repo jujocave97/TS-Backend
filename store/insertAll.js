@@ -15,19 +15,27 @@ async function insertAll() {
     try {
         await insertOrganizations();
         await insertCustomers();
-        await insertContacts();
-        // await insertGroups();
-        // await insertProducts();
-        // await insertProductVersions()    ;
-        // await insertUsers();
-        // await insertTicketTypes();
-        // await insertTicketSeverities();
-        // await insertTicketStatuses();
-        // await insertTickets();
-        // await insertActions();
+        await insertGroups();
+        await insertProducts();
+        await insertProductVersions();
+        await insertUsers();
+        await sleep(1000);
+        await insertContacts(); 
+        await insertTicketTypes();
+        await insertTicketSeverities();
+        await sleep(1000);  
+        await insertTicketStatuses();
+        await sleep(1000);
+        await insertTickets();
+        await sleep(1000);
+        await insertActions();
     } catch (error) {
         console.error('Error inserting data:', error);
     }
 }
+
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 
 insertAll();

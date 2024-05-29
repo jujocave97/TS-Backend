@@ -3,7 +3,7 @@ const fs = require ('fs');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
 
-const userList = createListSync('Users'); // lista de usuarios id antiguo : id nuevo
+ // lista de usuarios id antiguo : id nuevo
 
 function objectList(){
     const data = fs.readFileSync("./json/ticketSeverities.json",'utf8');
@@ -13,6 +13,8 @@ function objectList(){
 }
 
 async function processTicketSeverities(ticketSeverities){
+    const userList =await createListSync('Users');
+
     ticketSeverities.forEach(async ticket => {
         const creator = userList[ticket.CreatorID];
         ticket.CreatorID = creator;

@@ -5,12 +5,13 @@ const {obtenerTickets} = require('../services/ticketService');
 const { exit } = require('process');
 const {createListSync} = require('./../formats/createListOfJSON');
 
-const ticketList = createListSync('Tickets');
+
 
  // Ruta a la carpeta que contiene los archivos JSON
 
 // Función para leer archivos JSON , cambiar el id de ticket referenciado e insertar actions
 async function insertActions() {
+    const ticketList = createListSync('Tickets');
     const directorio = "./json/actions";
     try {
         const archivos = await fs.promises.readdir(directorio);

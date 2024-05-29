@@ -13,12 +13,12 @@ function objectList(){
 }
 
 async function processTickets(tickets){
-    const productList = createListSync('Products');
-    const groupList = createListSync('Groups');
-    const userList = createListSync('Users');
-    const ticketStatusList = createListSync('TicketStatus');
-    const ticketTypeList =  createListSync('TicketTypes');
-    const ticketSeverityList = createListSync('TicketSeverities');
+    const productList =await createListSync('Products');
+    const groupList =await createListSync('Groups');
+    const userList =await createListSync('Users');
+    const ticketStatusList =await createListSync('TicketStatus');
+    const ticketTypeList = await createListSync('TicketTypes');
+    const ticketSeverityList =await createListSync('TicketSeverities');
     
     tickets.forEach(async ticket => {
 
