@@ -1,10 +1,10 @@
 const  {insertProduct}  = require('../services/productService');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const path = require('path');
-const fs = require ('fs');
+const fs = require ('fs').promises;
 
-function objectList(){
-    const data = fs.readFileSync("./json/products.json",'utf8');
+async function objectList(){
+    const data =await  fs.readFile("./json/products.json",'utf8');
     const objectList = JSON.parse(data);
     const products = objectList.Products;
     return products;
@@ -22,13 +22,12 @@ async function processProducts(products){
  
 async function insertProducts() {
     try{
-        const products = objectList();
+        const products =await objectList();
         await processProducts(products);
         console.log("Se han insertado los productos");
     }catch(error){
         console.log("Error al insertar productos ", error);
     }
-    
 }
 
 module.exports = {insertProducts}

@@ -1,13 +1,13 @@
 const  {insertTicketStatus}  = require('../services/ticketStatusesService');
-const fs = require ('fs');
+const fs = require ('fs').promises;
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
 
 
 
 
-function objectList(){
-    const data = fs.readFileSync("./json/ticketStatus.json",'utf8');
+async function objectList(){
+    const data =await fs.readFile("./json/ticketStatus.json",'utf8');
     const objectList = JSON.parse(data);
     const ticketSeverities = objectList.TicketStatuses;
     return ticketSeverities;
@@ -36,7 +36,7 @@ function objectList(){
 
 async function insertTicketStatuses(){
     try{
-        const ticketStatus = objectList();
+        const ticketStatus = await objectList();
         await processTicketStatus(ticketStatus);
     }catch(error){
         console.log("Error al introducir ticket status", error);

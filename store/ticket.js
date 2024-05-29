@@ -1,12 +1,12 @@
 const  {insertTicket}  = require('../services/ticketService');
-const fs = require ('fs');
+const fs = require ('fs').promises;
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
 
 
 
-function objectList(){
-    const data = fs.readFileSync("./json/tickets.json",'utf8');
+async function objectList(){
+    const data =await fs.readFile("./json/tickets.json",'utf8');
     const objectList = JSON.parse(data);
     const tickets = objectList.Tickets;
     return tickets;
@@ -37,10 +37,7 @@ async function processTickets(tickets){
             ticket.UserID = user;
         }
     
-        if(ticket.TicketStatusID in ticketStatusList){
-            const ticketStatus = ticketStatusList[ticket.TicketStatusID];
-            ticket.TicketStatusID = ticketStatus;
-        }
+        ticket.TicketStatusID = ticketStatusList[ticket.TicketStatusID];
     
         if(ticket.TicketTypeID in ticketTypeList){
             const ticketType = ticketTypeList[ticket.TicketTypeID];
@@ -72,7 +69,7 @@ async function processTickets(tickets){
 
 async function insertTickets () {
     try{
-        const tickets = objectList();
+        const tickets = await objectList();
         processTickets(tickets);
         console.log("Se han introducido los tickets correctamente");
     }catch(error){

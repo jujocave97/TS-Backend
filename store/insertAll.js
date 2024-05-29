@@ -19,16 +19,13 @@ async function insertAll() {
         await insertProducts();
         await insertProductVersions();
         await insertUsers();
-        await sleep(1000);
         await insertContacts(); 
         await insertTicketTypes();
         await insertTicketSeverities();
-        await sleep(1000);  
         await insertTicketStatuses();
-        await sleep(1000);
         await insertTickets();
-        await sleep(1000);
-        await insertActions();
+
+       // await insertActions();
     } catch (error) {
         console.error('Error inserting data:', error);
     }

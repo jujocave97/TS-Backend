@@ -1,10 +1,10 @@
 const  {insertGroup}  = require('../services/groupService');
 const path = require('path');
-const fs = require ('fs');
+const fs = require ('fs').promises;
 
 
-function objectList(){
-    const data = fs.readFileSync("./json/groups.json",'utf8');
+async function objectList(){
+    const data =await fs.readFile("./json/groups.json",'utf8');
     const objectList = JSON.parse(data);
     const groups = objectList.Groups;
     return groups;
@@ -18,7 +18,7 @@ async function processGroups(groups){
 }
 async function insertGroups (){
     try{
-        const list = objectList();
+        const list =await objectList();
         await processGroups(list);
         console.log("Se han insertado los grupos ");
     }catch(error){

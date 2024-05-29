@@ -1,10 +1,10 @@
 const  {insertCustomer}  = require('../services/customerService');
 const path = require('path');
-const fs = require ('fs');
+const fs = require ('fs').promises;
 const {swapEngCalendar} = require('./../formats/changeDate');
 
-function objectList(){
-    const data = fs.readFileSync("./json/customers.json",'utf8');
+async function objectList(){
+    const data =await fs.readFile("./json/customers.json",'utf8');
     const objectList = JSON.parse(data);
     const customers = objectList.Customers;
     return customers;
@@ -23,7 +23,7 @@ async function processCustomers( customers ){
 
 async function insertCustomers(){
     try{
-        const customers = objectList();
+        const customers = await objectList();
         await processCustomers(customers);
         console.log('Todos los clientes se han insertado correctamente.');
     }catch(error){

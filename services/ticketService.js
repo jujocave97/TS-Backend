@@ -8,13 +8,11 @@ async function insertTicket(dataTicket) {
     try {
       const newTicket = await Ticket.create(dataTicket);
        addTOJson(dataTicket.ID, newTicket.id, './keys/Tickets.json');
-      console.log('Nuevo ID de ticket:', newTicket);
+      console.log('Nuevo ID de ticket:', newTicket.id);
     } catch (error) {
       console.error('Error al insertar el ticket:', error);
     }
 }
-
-
 
 
 module.exports = {insertTicket};

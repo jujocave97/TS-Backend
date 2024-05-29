@@ -1,12 +1,12 @@
 const  {insertTicketSeverity}  = require('../services/ticketSeveritiesService');
-const fs = require ('fs');
+const fs = require ('fs').promises;
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
 
  // lista de usuarios id antiguo : id nuevo
 
-function objectList(){
-    const data = fs.readFileSync("./json/ticketSeverities.json",'utf8');
+async function objectList(){
+    const data =await fs.readFile("./json/ticketSeverities.json",'utf8');
     const objectList = JSON.parse(data);
     const ticketSeverities = objectList.TicketSeverities;
     return ticketSeverities;
@@ -30,7 +30,7 @@ async function processTicketSeverities(ticketSeverities){
 
 async function insertTicketSeverities() {
     try{
-        const ticketSeverities = objectList();
+        const ticketSeverities = await objectList();
         await processTicketSeverities(ticketSeverities);
         console.log("Se han introducido correctamente los severities tickets");
     }catch(error){

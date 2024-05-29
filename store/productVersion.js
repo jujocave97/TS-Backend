@@ -1,9 +1,9 @@
 const  {insertProductVerion}  = require('../services/productVersionStatusesService');
 const {swapEngCalendar} = require('./../formats/changeDate');
-const fs = require ('fs');
+const fs = require ('fs').promises;
 
-function objectList(){
-    const data = fs.readFileSync("./json/productVersion.json",'utf8');
+async function objectList(){
+    const data =await fs.readFile("./json/productVersion.json",'utf8');
     const objectList = JSON.parse(data);
     const productV = objectList.ProductVersionStatuses;
     return productV;
@@ -20,7 +20,7 @@ async function processProducts(productV){
 
 async function insertProductVersions () {
     try {
-        const productV = objectList();
+        const productV = await objectList();
         await processProducts(productV);
         console.log("Se han introducido correctamente los version products");
     }catch(error){
