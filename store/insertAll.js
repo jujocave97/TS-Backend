@@ -2,7 +2,7 @@ const { insertOrganizations } = require('./organization');
 const { insertCustomers } = require('./customer');
 const { insertContacts } = require('./contact');
 const { insertGroups } = require('./group');
-const { insertActions } = require('./insertActions');
+const { funInsertActions } = require('./insertActions');
 const { insertProducts } = require('./product');
 const { insertProductVersions } = require('./productVersion');
 const { insertTickets } = require('./ticket');
@@ -24,7 +24,8 @@ async function insertAll() {
         await insertTicketSeverities();
         await insertTicketStatuses();
         await insertTickets();
-
+        //await sleep(1000)
+        await funInsertActions();
        // await insertActions();
     } catch (error) {
         console.error('Error inserting data:', error);

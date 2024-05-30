@@ -20,7 +20,7 @@ async function processTickets(tickets){
     const ticketTypeList = await createListSync('TicketTypes');
     const ticketSeverityList =await createListSync('TicketSeverities');
     
-    tickets.forEach(async ticket => {
+    for(const ticket of tickets){
 
         if(ticket.ProductID in productList){
             const product = productList[ticket.ProductID];
@@ -37,7 +37,10 @@ async function processTickets(tickets){
             ticket.UserID = user;
         }
     
-        ticket.TicketStatusID = ticketStatusList[ticket.TicketStatusID];
+       
+        if(ticket.TicketStatusID in ticketStatusList){ 
+            ticket.TicketStatusID = ticketStatusList[ticket.TicketStatusID];
+        }
     
         if(ticket.TicketTypeID in ticketTypeList){
             const ticketType = ticketTypeList[ticket.TicketTypeID];
@@ -64,7 +67,7 @@ async function processTickets(tickets){
         ticket.DateClosed = swapEngCalendar( ticket.DateClosed);
         ticket.DueDate = swapEngCalendar( ticket.DueDate);
         await insertTicket( ticket);
-    });
+    }
 }
 
 async function insertTickets () {
