@@ -41,7 +41,7 @@ Proyecto en el que recogemos datos de Team Support a través de su API en format
 - Node.js
 - npm (Node Package Manager)
 - Sequelize
-- Un gestor de bases de datos compatible (MySQL, PostgreSQL, etc.)
+- Un gestor de bases de datos compatible (MySQL, PostgreSQL,MSSQL etc.)
 
 ## Instalación
 
@@ -49,10 +49,7 @@ Sigue estos pasos para configurar el entorno de desarrollo:
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/usuario/nombre-del-proyecto.git
-
-# Navegar al directorio del proyecto
-cd nombre-del-proyecto
+git clone https://github.com/jujocave97/TS-Backend.git
 
 # Instalar las dependencias
 npm install
