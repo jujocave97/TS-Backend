@@ -3,7 +3,7 @@ const {addTOJson} = require('../keys/addToKeysToJSON');
 const { Group, GroupSchema } = require('./../db/models/groupModel')
 
 Group.init(GroupSchema, Group.config(seq));
-
+// metodos crud para group , en este caso solo esta insert, si se requieren mas se hacen los metodos correspondientes
 async function insertGroup(dataGroup) {
     try {
       const newGroup = await Group.create(dataGroup);

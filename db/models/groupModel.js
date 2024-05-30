@@ -1,6 +1,6 @@
 const {Model, DataTypes, Sequelize } = require('sequelize');
 const {Organization} = require('./organizationModel')
-
+// esquema de la tabla group y sus respectivos campos
 const GROUP_TABLE = 'groups';
 
 const GroupSchema = {

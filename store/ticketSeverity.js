@@ -3,7 +3,7 @@ const fs = require ('fs').promises;
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
 
- // lista de usuarios id antiguo : id nuevo
+// insercion de todos los tickets severities incluyendo sus FK correspondientes
 
 async function objectList(){
     const data =await fs.readFile("./json/ticketSeverities.json",'utf8');

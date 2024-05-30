@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+// crear json clave valor, clave = idAntiguo valor = idNuevo , junto con la ruta especificada donde se quiere guardar el json
 async function addTOJson(clave, valor, rutaArchivo) {
   // Objeto con la clave y el valor que deseas agregar
   const nuevaData = {

@@ -1,7 +1,7 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const TICKETSTATUSES_TABLE = 'ticket_statuses';
-
+// esquema de la tabla ticket staus y sus respectivos campos
 const TicketStatusesSchema = {
     id: {
         allowNull: false,

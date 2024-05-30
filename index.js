@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const routerApi = require('./routes');
-
+// construccion de api, no se usa actualmente
 const app = express();
 
 const port = process.env.PORT || 3000;

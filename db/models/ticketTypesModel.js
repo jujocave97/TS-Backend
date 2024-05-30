@@ -1,5 +1,5 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
-
+// esquema de la tabla ticket types y sus columnas
 const TICKETTYPES_TABLE = 'ticket_types';
 
 const TicketTypesSchema = {

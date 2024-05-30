@@ -3,7 +3,7 @@ const {addTOJson} = require('../keys/addToKeysToJSON');
 const { Ticket, TicketSchema } = require('./../db/models/ticketModel')
 
 Ticket.init(TicketSchema, Ticket.config(seq));
-
+// metodos crud para ticket  , en este caso solo esta insert, si se requieren mas se hacen los metodos correspondientes
 async function insertTicket(dataTicket) {
     try {
       const newTicket = await Ticket.create(dataTicket);

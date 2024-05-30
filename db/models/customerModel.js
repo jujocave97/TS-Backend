@@ -1,5 +1,5 @@
 const {Model, DataTypes, Sequelize } = require('sequelize');
-
+// esuqema de la tabla customers y sus respectivas columnas
 const CUSTOMER_TABLE= 'customers';
 
 const CustomerSchema = {

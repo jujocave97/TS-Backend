@@ -3,7 +3,7 @@ const {addTOJson} = require('../keys/addToKeysToJSON');
 const { TicketSeverities, TicketSeveritiesSchema } = require('./../db/models/ticketSeveritiesModel')
 
 TicketSeverities.init(TicketSeveritiesSchema, TicketSeverities.config(seq));
-
+// metodos crud para ticket severities , en este caso solo esta insert, si se requieren mas se hacen los metodos correspondientes
 async function insertTicketSeverity(dataTS) {
     try {
       const newTicketSeverity = await TicketSeverities.create(dataTS);

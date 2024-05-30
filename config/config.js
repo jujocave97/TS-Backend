@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+// exportacion de .env para que su lectura en el codigo sea mas facil
 const config = {
     env: process.env.NODE_ENV || 'development',
     port: process.env.PORT || 3000,

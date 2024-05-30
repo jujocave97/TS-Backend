@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const insertAction = require('../services/actionsService');
 const { createListSync } = require('./../formats/createListOfJSON');
-
+// insertar todas las acciones que dependen de un ticket
 async function insertActions() {
     const directorio = "./json/actions";
     try {
@@ -41,12 +41,5 @@ async function insertActions() {
     }
 }
 
-async function funInsertActions() {
-    try {
-        await insertActions(); // Llamada directa a insertActions después de insertar los tickets
-    } catch (error) {
-        console.error("No se han podido introducir los actions:", error);
-    }
-}
 
-module.exports = { funInsertActions };
+module.exports = { insertActions };

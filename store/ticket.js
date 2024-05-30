@@ -2,7 +2,7 @@ const { insertTicket } = require('../services/ticketService');
 const fs = require('fs').promises;
 const { swapEngCalendar } = require('./../formats/changeDate');
 const { createListSync } = require('./../formats/createListOfJSON');
-
+// insercion de todos los tickets modificando las FK correspondientes
 async function objectList() {
     const data = await fs.readFile("./json/tickets.json", 'utf8');
     const objectList = JSON.parse(data);

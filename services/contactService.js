@@ -3,7 +3,7 @@ const { Contact, contactSchema } = require('./../db/models/contactsModel')
 const {addTOJson} = require('../keys/addToKeysToJSON');
 
 Contact.init(contactSchema, Contact.config(seq));
-
+// metodos crud para contact , en este caso solo esta insert, si se requieren mas se hacen los metodos correspondientes
 async function insertContact(dataContact) {
   //let transaction;
     try {

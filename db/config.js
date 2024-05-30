@@ -1,5 +1,5 @@
 const { config } = require('./../config/config');
-
+// configuracion de la conexion a la bbdd
 const USER = encodeURIComponent(config.dbUser);
 const PASSWORD = encodeURIComponent(config.dbPassword);
 const HOST = config.dbHost;

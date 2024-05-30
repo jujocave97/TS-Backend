@@ -2,9 +2,8 @@ const {insertUser} = require('./../services/userService');
 const path = require('path');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
-
 const fs = require ('fs');
-
+// insercion de users con sus correspondientes FK
 function objectList(){
     const data = fs.readFileSync("./json/users.json",'utf8');
     const objectList = JSON.parse(data);

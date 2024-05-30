@@ -3,7 +3,7 @@ const { Customer, CustomerSchema } = require('./../db/models/customerModel')
 const {addTOJson} = require('../keys/addToKeysToJSON');
 
 Customer.init(CustomerSchema, Customer.config(seq));
-
+// metodos crud para customer, en este caso solo esta insert, si se requieren mas se hacen los metodos correspondientes
 async function insertCustomer(dataCustomer) {
     try {
       const newCustomer = await Customer.create(dataCustomer);

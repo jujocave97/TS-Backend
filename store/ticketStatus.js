@@ -2,9 +2,7 @@ const  {insertTicketStatus}  = require('../services/ticketStatusesService');
 const fs = require ('fs').promises;
 const {swapEngCalendar} = require('./../formats/changeDate');
 const {createListSync} = require('./../formats/createListOfJSON');
-
-
-
+// insercion de los ticket status con sus correspondientes FK 
 
 async function objectList(){
     const data =await fs.readFile("./json/ticketStatus.json",'utf8');

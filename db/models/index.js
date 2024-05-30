@@ -11,7 +11,7 @@ const { ProductVersion, ProductVersionSchema} = require ('./productVersionStatus
 const { Ticket, TicketSchema} = require ('./ticketModel');
 const { Actions, ActionsSchema} = require ('./actionsModel');
 
-
+// funcion para la creacion de las tablas mediante migraciones
 function setupModels (sequelize) {
     Product.init(ProductSchema, Product.config(sequelize));
     Organization.init(OrganizationsSchema, Organization.config(sequelize));

@@ -1,5 +1,5 @@
 const {Model, DataTypes, Sequelize } = require('sequelize');
-
+// esquema de la tabla actions y sus respectivas columnas
 const ACTION_TABLE= 'actions';
 
 const ActionsSchema = {

@@ -1,6 +1,6 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const moment = require('moment');
-
+// esquema de la tabla users y sus columnas
 const USER_TABLE= 'users';
 
 const UserSchema = {

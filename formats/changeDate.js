@@ -1,3 +1,5 @@
+// metodo para cambiar el formato de la fecha
+
 const swapEngCalendar = (dateString) => {
     if (!dateString) return null; // Si la fecha es nula, regresar nulo
   

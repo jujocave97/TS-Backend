@@ -1,5 +1,5 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
-
+// esquema de la tabla product y sus respectivos campos
 const PRODUCT_TABLE = 'products';
 
 const ProductSchema = {

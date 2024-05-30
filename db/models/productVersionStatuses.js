@@ -1,5 +1,5 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
-
+// esquema de la tabla product version y sus respectivos campos
 const PRODUCTVERSION_TABLE = 'product_version';
 
 const ProductVersionSchema = {

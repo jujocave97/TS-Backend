@@ -3,7 +3,7 @@ const {addTOJson} = require('../keys/addToKeysToJSON');
 const { TicketStatus, TicketStatusesSchema } = require('./../db/models/ticketStatusesModel')
 
 TicketStatus.init(TicketStatusesSchema, TicketStatus.config(seq));
-
+// metodos crud para ticket status, en este caso solo esta insert, si se requieren mas se hacen los metodos correspondientess
 async function insertTicketStatus(dataTS) {
     try {
       const newTicketStatus = await TicketStatus.create(dataTS);

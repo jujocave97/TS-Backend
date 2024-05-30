@@ -1,5 +1,5 @@
 const {Sequelize} = require('sequelize');
-
+// configuracion de sequeliza con la bbdd, es exporta un objeto sequielize
 const { config } = require('./../config/config');
 const setupModels = require('./../db/models');
 

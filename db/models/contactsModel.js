@@ -1,5 +1,5 @@
 const {Model, DataTypes, Sequelize } = require('sequelize');
-
+// esquema de la tabla contacts y sus respectivas columnas
 const CONTACT_TABLE= 'contacts';
 
 const contactSchema = {

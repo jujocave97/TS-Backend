@@ -2,7 +2,8 @@ const https = require('https');
 const fs = require('fs');
 const yargs = require('yargs');
 
-
+// generar el json de la api de team support segun el endpoint requerido
+// ej : node readAPItoConvertJSON.js --endpoint Tickets --directory Tickets
 
 const argv = yargs
     .option('endpoint', {

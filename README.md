@@ -53,3 +53,65 @@ git clone https://github.com/jujocave97/TS-Backend.git
 
 # Instalar las dependencias
 npm install
+npm i dontenv
+npm install --save sequelize
+```
+
+## Configuracion
+
+archivo .env
+```javascript
+PORT= numeroDePuerto
+DB_USER='usuario'
+DB_PASSWORD='password'
+DB_HOST='host'
+DB_NAME='nombreDB'
+DB_PORT='puertoQueUsaLaDB'
+DB_INSTANCE=''
+```
+
+archivo .sequelize
+```javascript
+const path = require('path');
+ module.exports = {
+  'config': path.resolve('db', 'config.js'),
+  'models-path': path.resolve('db', 'models'),
+  'seeders-path': path.resolve('db', 'seeders'),
+   'migrations-path': path.resolve('db', 'migrations')
+   }
+```
+archivo package.json
+```javascript
+{
+  "name": "tiene que aparecer el nombre del proyecto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "archivomain.js",
+  "scripts": {
+    "dev": "node --watch api/archivomain.js",
+    "start": "node api/archivomain.js",
+    "lint": "eslint",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:revert": "sequelize-cli db:migrate:undo",
+    "migrations:delete": "sequelize-cli db:migrate:undo:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "moment": "^2.30.1",
+    "mssql": "^10.0.2",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
+}
+```
+# work in progress

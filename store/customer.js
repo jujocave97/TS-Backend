@@ -2,7 +2,7 @@ const  {insertCustomer}  = require('../services/customerService');
 const path = require('path');
 const fs = require ('fs').promises;
 const {swapEngCalendar} = require('./../formats/changeDate');
-
+// insertar los customers mas la org ID
 async function objectList(){
     const data =await fs.readFile("./json/customers.json",'utf8');
     const objectList = JSON.parse(data);

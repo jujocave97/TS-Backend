@@ -2,7 +2,7 @@ const  {insertGroup}  = require('../services/groupService');
 const path = require('path');
 const fs = require ('fs').promises;
 
-
+// insertar los grupos
 async function objectList(){
     const data =await fs.readFile("./json/groups.json",'utf8');
     const objectList = JSON.parse(data);

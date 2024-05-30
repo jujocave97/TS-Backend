@@ -2,7 +2,7 @@ const  {insertProduct}  = require('../services/productService');
 const {swapEngCalendar} = require('./../formats/changeDate');
 const path = require('path');
 const fs = require ('fs').promises;
-
+// insercion de todos los productos incluyendo el id de organizacion 
 async function objectList(){
     const data =await  fs.readFile("./json/products.json",'utf8');
     const objectList = JSON.parse(data);

@@ -2,6 +2,8 @@ const {insertContact} = require('../services/contactService');
 const { swapEngCalendar } = require('./../formats/changeDate');
 const fs = require('fs').promises;
 const { createListSync } = require('./../formats/createListOfJSON');
+
+// inserta los contactos cambiando el id de organizacion por customer
 // crea una lista de contactos
 async function objectList() {
     const data =await  fs.readFile("./json/contacts.json", 'utf8');
