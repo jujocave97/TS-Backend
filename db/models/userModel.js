@@ -32,17 +32,17 @@ const UserSchema = {
         allowNull: false
     },
     LastLoggin: {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         allowNull: true,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     LastActivity: {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         allowNull: true,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     LastPing: {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         defaultValue: null
     },
     IsSystemAdmin: {
@@ -70,17 +70,17 @@ const UserSchema = {
         defaultValue: null
     },
     DeactivatedOn : {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         allowNull: true,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     DateCreated : {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         allowNull: false,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     DateModified : {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         allowNull: false,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
@@ -103,7 +103,9 @@ const UserSchema = {
     GroupID: {
         type: DataTypes.UUID,
     
-    }
+    },GroupID: {
+        type: DataTypes.UUID,
+      },
 }
 
 class User extends Model {

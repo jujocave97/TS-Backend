@@ -1,7 +1,7 @@
 'use strict';
 const { DataTypes } = require('sequelize');
 const { ORGANIZATION_TABLE } = require('./../models/organizationModel');
-const { PRODUCTVERSION_TABLE} = require('./../models/productVerionStatuses');
+const { PRODUCTVERSION_TABLE} = require('./../models/productVersionStatuses');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {

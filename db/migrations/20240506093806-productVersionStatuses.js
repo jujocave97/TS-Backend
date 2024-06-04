@@ -1,6 +1,6 @@
 'use strict';
 
-const { ProductVersionSchema, PRODUCTVERSION_TABLE } = require('./../models/productVerionStatuses');
+const { ProductVersionSchema, PRODUCTVERSION_TABLE } = require('./../models/productVersionStatuses');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {

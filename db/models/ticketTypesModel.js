@@ -17,7 +17,7 @@ const TicketTypesSchema = {
         type: DataTypes.STRING
     },
     DateCreated: {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
       allowNull: false,
       defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },

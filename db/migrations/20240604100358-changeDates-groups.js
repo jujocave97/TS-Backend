@@ -6,12 +6,12 @@ const { GROUP_TABLE, GroupSchema} = require('./../models/groupModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.addColumn(GROUP_TABLE, "createdAt", {
+    queryInterface.changeColumn(GROUP_TABLE, "createdAt", {
       type: "SMALLDATETIME",
       defaultValue: Sequelize.NOW
     });
 
-    queryInterface.addColumn(GROUP_TABLE, "updatedAt", {
+    queryInterface.changeColumn(GROUP_TABLE, "updatedAt", {
       type: "SMALLDATETIME",
       defaultValue: Sequelize.NOW
     });

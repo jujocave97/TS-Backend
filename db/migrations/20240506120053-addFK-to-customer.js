@@ -8,8 +8,8 @@ const { GROUP_TABLE} = require('./../models/groupModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.changeColumn(CUSTOMER_TABLE, "userID", {
-      allowNull: false,
+    queryInterface.changeColumn(CUSTOMER_TABLE, "UserID", {
+      
       type: DataTypes.UUID,
       unique: false,
       references: {
@@ -19,8 +19,7 @@ module.exports = {
       onUpdate: 'NO ACTION',
       onDelete: 'NO ACTION'
     });
-    queryInterface.changeColumn(CUSTOMER_TABLE, "groupID", {
-      allowNull: false,
+    queryInterface.changeColumn(CUSTOMER_TABLE, "GroupID", {
       type: DataTypes.UUID,
       unique: false,
       references: {
@@ -33,7 +32,7 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.removeColumn(CUSTOMER_TABLE, "userID");
-    await queryInterface.removeColumn(CUSTOMER_TABLE, "groupID");
+    await queryInterface.removeColumn(CUSTOMER_TABLE, "UserID");
+    await queryInterface.removeColumn(CUSTOMER_TABLE, "GroupID");
   }
 };

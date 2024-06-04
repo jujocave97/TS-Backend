@@ -14,7 +14,7 @@ const { TICKET_TABLE} = require('./../models/ticketModel');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) { 
-    queryInterface.changeColumn(TICKET_TABLE, "productID", {
+    queryInterface.changeColumn(TICKET_TABLE, "ProductID", {
     
       type: DataTypes.UUID,
       unique: false,
@@ -25,7 +25,7 @@ module.exports = {
       onUpdate: 'NO ACTION',
       onDelete: 'NO ACTION'
     });
-    queryInterface.addColumn(TICKET_TABLE, "groupID", {
+    queryInterface.changeColumn(TICKET_TABLE, "GroupID", {
       
       type: DataTypes.UUID,
       unique: false,
@@ -36,7 +36,7 @@ module.exports = {
       onUpdate: 'NO ACTION',
       onDelete: 'NO ACTION'
     });
-    queryInterface.addColumn(TICKET_TABLE, "userID", {
+    queryInterface.changeColumn(TICKET_TABLE, "UserID", {
      
       type: DataTypes.UUID,
       unique: false,
@@ -47,7 +47,7 @@ module.exports = {
       onUpdate: 'NO ACTION',
       onDelete: 'NO ACTION'
     });
-    queryInterface.addColumn(TICKET_TABLE, "ticket_status_ID", {
+    queryInterface.changeColumn(TICKET_TABLE, "TicketStatusID", {
       
       type: DataTypes.UUID,
       unique: false,
@@ -58,7 +58,7 @@ module.exports = {
       onUpdate: 'NO ACTION',
       onDelete: 'NO ACTION'
     });
-    queryInterface.addColumn(TICKET_TABLE, "ticket_type_ID", {
+    queryInterface.changeColumn(TICKET_TABLE, "TicketTypeID", {
       
       type: DataTypes.UUID,
       unique: false,
@@ -69,7 +69,7 @@ module.exports = {
       onUpdate: 'NO ACTION',
       onDelete: 'NO ACTION'
     });
-    queryInterface.addColumn(TICKET_TABLE, "ticket_severity_ID", {
+    queryInterface.changeColumn(TICKET_TABLE, "TicketSeverityID", {
     
       type: DataTypes.UUID,
       unique: false,
@@ -80,7 +80,7 @@ module.exports = {
       onUpdate: 'NO ACTION',
       onDelete: 'NO ACTION'
     });
-    queryInterface.addColumn(TICKET_TABLE, "contactID", {
+    queryInterface.changeColumn(TICKET_TABLE, "ContactID", {
       
       type: DataTypes.UUID,
       unique: false,
@@ -91,7 +91,7 @@ module.exports = {
       onUpdate: 'NO ACTION',
       onDelete: 'NO ACTION'
     });
-    queryInterface.addColumn(TICKET_TABLE, "customerID", {
+    queryInterface.changeColumn(TICKET_TABLE, "CustomerID", {
       
       type: DataTypes.UUID,
       unique: false,

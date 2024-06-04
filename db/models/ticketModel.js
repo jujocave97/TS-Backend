@@ -33,12 +33,12 @@ const TicketSchema = {
         defaultValue: false
     },
     DateCreated: {
-      type: DataTypes.DATE,
+      type: "SMALLDATETIME",
       allowNull: false,
       defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     DateModified: {
-      type: DataTypes.DATE,
+      type: "SMALLDATETIME",
       allowNull: false,
       defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
@@ -47,7 +47,7 @@ const TicketSchema = {
       allowNull: false,
     },
     DateClosed: {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     DaysClosed: {
@@ -67,7 +67,7 @@ const TicketSchema = {
         defaultValue: 0
     },
     DueDate: {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
     },
     JiraKey: {

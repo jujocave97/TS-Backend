@@ -31,23 +31,23 @@ const contactSchema = {
         defaultValue: false
     },
     DateCreated: {
-      type: DataTypes.DATE,
+      type:"SMALLDATETIME",
         defaultValue: Sequelize.NOW
     },
     DateModified: {
-      type: DataTypes.DATE,
+      type: "SMALLDATETIME",
         defaultValue: Sequelize.NOW
     },
     LastLogin: {
-      type: DataTypes.DATE,
+      type: "SMALLDATETIME",
         defaultValue: Sequelize.NOW
     },
     LastActivity: {
-      type: DataTypes.DATE,
+      type: "SMALLDATETIME",
         defaultValue: Sequelize.NOW
     },
     LastPing: {
-      type: DataTypes.DATE,
+      type: "SMALLDATETIME",
         defaultValue: Sequelize.NOW,
         allowNull: true
     },
@@ -67,11 +67,11 @@ const contactSchema = {
         defaultValue: false
     },
     ActivatedOn: {
-      type: DataTypes.DATE,
+      type: "SMALLDATETIME",
         defaultValue: Sequelize.NOW
     },
     DeactivatedOn: {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         defaultValue: null
     },
     DisableOrganizationTicketsViewOnPortal: {
@@ -95,7 +95,9 @@ const contactSchema = {
     },
     CustomerID: {
       type: DataTypes.UUID
-    }
+    },GroupID: {
+      type: DataTypes.UUID,
+    },
   
   }
 

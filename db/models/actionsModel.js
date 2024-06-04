@@ -17,8 +17,8 @@ const ActionsSchema = {
       type: DataTypes.STRING,
       defaultValue: null
     },
-    Descript: {
-      type: DataTypes.STRING,
+    Description: {
+      type: DataTypes.STRING(4000),
       defaultValue: null
     },
     TicketID: {

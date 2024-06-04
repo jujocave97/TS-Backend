@@ -17,11 +17,11 @@ const ProductSchema = {
         type: DataTypes.STRING
     },
     DateCreated: {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",  // cambiar las fechas
         defaultValue: Sequelize.NOW
     },
     DateModified: {
-        type: DataTypes.DATE,
+        type: "SMALLDATETIME",
         defaultValue: Sequelize.NOW
     },
     OrganizationID: {

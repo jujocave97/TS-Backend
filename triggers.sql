@@ -1,6 +1,6 @@
 DELIMITER ;;
-CREATE TRIGGER `mi_tabla_before_insert`
-BEFORE INSERT ON `mi_tabla`
+CREATE TRIGGER `nombre_trigger`
+BEFORE INSERT ON `nombre_tabla`
 FOR EACH ROW
 BEGIN
   IF NEW.id IS NULL THEN
@@ -8,4 +8,4 @@ BEGIN
   END IF;
 END;
 ;;
-DELIMITER ;
+DELIMITER ;;
