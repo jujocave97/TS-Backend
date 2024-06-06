@@ -1,6 +1,7 @@
 const https = require('https');
 const fs = require('fs');
 const yargs = require('yargs');
+require('dotenv').config();
 
 // generar el json de la api de team support segun el endpoint requerido
 // ej : node readAPItoConvertJSON.js --endpoint Tickets --directory Tickets
@@ -23,8 +24,8 @@ const argv = yargs
 const endpoint = argv.endpoint;
 const directory = argv.directory;
 
-const organizationID = '748448';
-const apiToken = '55e32b85-8a30-4533-84a0-9f5b1b81f45f';
+const organizationID = process.env.ORGANIZATIONID;
+const apiToken = process.env.APITOKEN;
 const credentials = `${organizationID}:${apiToken}`;
 const encodedCredentials = Buffer.from(credentials).toString('base64');
 

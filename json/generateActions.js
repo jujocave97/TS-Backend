@@ -1,8 +1,9 @@
 const https = require('https');
 const fs = require('fs');
+require('dotenv').config();
 
-const organizationID = '748448';
-const apiToken = '55e32b85-8a30-4533-84a0-9f5b1b81f45f';
+const organizationID = process.env.ORGANIZATIONID;
+const apiToken = process.env.APITOKEN;
 const credentials = `${organizationID}:${apiToken}`;
 const encodedCredentials = Buffer.from(credentials).toString('base64');
 
